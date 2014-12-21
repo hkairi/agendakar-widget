@@ -26,7 +26,7 @@ var EventList = React.createClass({
 
     this.props.liste.map(function(e){
       liste_evenements.push(
-        React.createElement(Evenement, {event: e})
+        React.createElement(Evenement, {event: e, key: e.id})
       );
     });
     return(
