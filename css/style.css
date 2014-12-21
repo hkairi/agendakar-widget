@@ -1,0 +1,15 @@
+
+ul {padding:0;margin:0}
+li { list-style:none;padding:0;margin:0; }
+a { color: #000; text-decoration:none; font-size:12px;}
+a:hover{ text-decoration:underline }
+h1{ font-size:22px;text-align: center;border-bottom:1px solid #A3ABAC; }
+div#content{
+  width: 490px;
+  height:400px;
+  overflow: auto;
+  border: 1px solid #A3ABAC;
+  float: right;
+  margin-right:30px;
+  padding:3px;
+}
