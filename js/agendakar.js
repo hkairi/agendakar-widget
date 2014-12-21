@@ -1,4 +1,3 @@
-var React;
 var Evenement = React.createClass({
   displayName: 'Evenement',
 
@@ -42,7 +41,7 @@ var Header = React.createClass({displayName: "Header",
                                }
 });
 
-var Widget = React.createClass({
+var AgendakarWidget = React.createClass({
   displayName: 'Agendakar',
 
   getInitialState: function(){
