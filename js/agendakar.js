@@ -3,7 +3,7 @@ var Evenement = React.createClass({
   displayName: 'Evenement',
 
   get_link: function(id){
-    return "http://www.agendakar.com/events/" + id;
+    return "http://www.agendakar.com/agenda/" + id;
   },
 
   render: function(){
