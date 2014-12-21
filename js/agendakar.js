@@ -1,3 +1,4 @@
+var React;
 var Evenement = React.createClass({
   displayName: 'Evenement',
 
@@ -25,7 +26,7 @@ var EventList = React.createClass({
     this.props.liste.map(function(e){
       liste_evenements.push(
         React.createElement(Evenement, {event: e})
-      )
+      );
     });
     return(
       React.createElement("ul", {className: "listing"},
@@ -37,7 +38,7 @@ var EventList = React.createClass({
 
 var Header = React.createClass({displayName: "Header",
                                render: function(){
-                                 return React.createElement("h1", null,  this.props.value)
+                                 return React.createElement("h1", null,  this.props.value);
                                }
 });
 
@@ -49,7 +50,7 @@ var Widget = React.createClass({
       events: [],
       didFetchData: false,
       api_url: 'http://localhost:3000/api/events.json'
-    }
+    };
   },
 
   componentDidMount: function(){
