@@ -1,10 +1,11 @@
+'use strict';
+
 var React, $, alert, $;
+
 var Evenement = React.createClass({
   displayName: 'Evenement',
 
-  get_link: function(id){
-    return "http://www.agendakar.com/agenda/" + id;
-  },
+  get_link: function(id){ return "http://www.agendakar.com/agenda/" + id; },
 
   render: function(){
     var _event = this.props.event;
