@@ -1,3 +1,4 @@
+var React, $, alert, $;
 var Evenement = React.createClass({
   displayName: 'Evenement',
 
@@ -6,12 +7,13 @@ var Evenement = React.createClass({
   },
 
   render: function(){
+    var _event = this.props.event;
     return(
       React.createElement("li", null,
-                          React.createElement("a", {href: this.get_link(this.props.event.slug), target: "_blank"},
-                                               "[Heure : "+this.props.event.heure_de_debut+"] ", React.createElement("b", null, this.props.event.nom)
-                                             )
-                         )
+        React.createElement("a", {href: this.get_link(_event.id), target: "_blank"},
+          "[Date: "+ _event.date_de_debut +"] [Heure : "+ _event.heure_de_debut+"] ", React.createElement("b", null, _event.nom)
+        )
+      )
     );
   }
 });
@@ -28,18 +30,12 @@ var EventList = React.createClass({
       );
     });
     return(
-      React.createElement("ul", {className: "listing"},
-                          liste_evenements
-                         )
+      React.createElement("ul", {className: "listing"}, liste_evenements)
     );
   }
 });
 
-var Header = React.createClass({displayName: "Header",
-                               render: function(){
-                                 return React.createElement("h1", null,  this.props.value);
-                               }
-});
+var Header = React.createClass({displayName: "Header", render: function(){ return React.createElement("h1", null,  this.props.value); } });
 
 var AgendakarWidget = React.createClass({
   displayName: 'Agendakar',
@@ -48,29 +44,23 @@ var AgendakarWidget = React.createClass({
     return {
       events: [],
       didFetchData: false,
-      api_url: 'http://localhost:3000/api/events.json'
+      api_url: 'http://www.agendakar.com/api/events.json'
     };
   },
 
   componentDidMount: function(){
     var self = this;
-    $.ajax({
-      url: this.state.api_url,
-      dataType: 'json',
-      crossDomain: true,
-    })
-    .done(function(data){
-      self.setState({ didFetchData: true, events: data });
-    })
+    $.ajax({ url: this.state.api_url, dataType: 'json', crossDomain: true })
+    .done(function(data){ self.setState({ didFetchData: true, events: data }); })
     .fail(function(){ alert("oups"); });
   },
 
   render: function(){
     return(
       React.createElement("div", {className: "agendakar-widget"},
-                          React.createElement(Header, {value: "Agendakar React Widget"}),
-                          React.createElement(EventList, {liste: this.state.events})
-                         )
+        React.createElement(Header, {value: "Agendakar React Widget"}),
+        React.createElement(EventList, {liste: this.state.events})
+      )
     );
   }
 });
