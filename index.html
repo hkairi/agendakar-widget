@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='fr'>
+  <head>
+    <title>Agendakar React</title>
+  </head>
+  <body>
+    <div id="content"></div>
+
+    <script type="text/jsx">
+      var Evenement = React.createClass({
+        displayName: 'Evenement',
+
+        get_link: function(id){
+          return "http://www.agendakar.com/events/" + id;
+        },
+
+        render: function(){
+          return(
+            <li>
+              <a href={this.get_link(this.props.event.slug)} target='_blank'>
+                <b>{this.props.event.nom}</b> &agrave; partir de {this.props.event.heure_de_debut}
+              </a>
+            </li>
+          );
+        }
+      });
+
+      var EventList = React.createClass({
+        displayName: 'Agenda',
+
+        render: function(){
+          var liste_evenements = [];
+
+          this.props.liste.map(function(e){
+            liste_evenements.push(
+              <Evenement event={e} />
+            )
+          });
+          return(
+            <ul className="listing">
+            { liste_evenements }
+            </ul>
+          );
+        }
+      });
+
+      var Header = React.createClass({
+        render: function(){
+          return <h1>{ this.props.value }</h1>
+        }
+      });
+
+      var Widget = React.createClass({
+        displayName: 'Agendakar',
+
+        getInitialState: function(){
+          return {
+            events: [],
+            didFetchData: false,
+            api_url: 'http://localhost:3000/api/events.json'
+          }
+        },
+
+        componentDidMount: function(){
+          var self = this;
+          $.ajax({
+            url: this.state.api_url,
+            dataType: 'json',
+            crossDomain: true,
+          })
+          .done(function(data){
+            self.setState({ didFetchData: true, events: data });
+          })
+          .fail(function(){ alert("oups"); });
+        },
+
+        render: function(){
+          return(
+            <div className='agendakar-widget'>
+              <Header value="Agendakar React Widget" />
+              <EventList liste={this.state.events} />
+            </div>
+          );
+        }
+      });
+
+      //
+      React.render( <Widget/>, document.getElementById('content') );
+    </script>
+
+    <script src="js/react.0.12.1.js"></script>
+    <script src="js/jsxt.js"></script>
+    <script src="js/jquery-1.10.0.min.js"></script>
+
+  </body>
+</html>
