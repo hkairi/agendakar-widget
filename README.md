@@ -1,0 +1,1 @@
+ = Agendakar React Widget
