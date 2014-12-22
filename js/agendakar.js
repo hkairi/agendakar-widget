@@ -61,6 +61,7 @@ var AgendakarWidget = React.createClass({
       margin: '150px 40px;',
       display: this.state.didFetchData ? "none" : "block"
     };
+
     return(
       React.createElement("div", {className: "agendakar-widget"},
         React.createElement(Header, {value: "Cette semaine sur Agendakar.com"}),
