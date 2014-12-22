@@ -48,6 +48,7 @@ var EventList = React.createClass({
 });
 
 var Header = React.createClass({displayName: "Header", render: function(){ return React.createElement("h1", null,  this.props.value); } });
+var Footer = React.createClass({displayName: "Footer", render: function(){ return React.createElement("p", null,  'www.agendakar.com'); } });
 
 var AgendakarWidget = React.createClass({
   displayName: 'Agendakar',
@@ -77,7 +78,8 @@ var AgendakarWidget = React.createClass({
       React.createElement("div", {className: "agendakar-widget"},
         React.createElement(Header, {value: "Cette semaine sur Agendakar.com"}),
         React.createElement("div", {style: style}, "CHARGEMENT EN COURS..."),
-        React.createElement(EventList, {liste: this.state.events})
+        React.createElement(EventList, {liste: this.state.events}),
+        React.createElement(Footer, null)
       )
     );
   }
