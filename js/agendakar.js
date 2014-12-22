@@ -12,7 +12,7 @@ var Evenement = React.createClass({
     return(
       React.createElement("li", null,
         React.createElement("a", {href: this.get_link(_event.id), target: "_blank"},
-          "[Date: "+ _event.date_de_debut +"] [Heure : "+ _event.heure_de_debut+"] ", React.createElement("b", null, _event.nom)
+          "Le "+ _event.date_de_debut +" a "+ _event.heure_de_debut+" ", React.createElement("br"), React.createElement("b", null, _event.nom)
         )
       )
     );
