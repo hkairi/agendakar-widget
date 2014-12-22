@@ -59,7 +59,7 @@ var AgendakarWidget = React.createClass({
   render: function(){
     return(
       React.createElement("div", {className: "agendakar-widget"},
-        React.createElement(Header, {value: "Agendakar React Widget"}),
+        React.createElement(Header, {value: "Cette semaine sur Agendakar.com"}),
         React.createElement(EventList, {liste: this.state.events})
       )
     );
