@@ -48,7 +48,9 @@ var EventList = React.createClass({
 });
 
 var Header = React.createClass({displayName: "Header", render: function(){ return React.createElement("h1", null,  this.props.value); } });
-var Footer = React.createClass({displayName: "Footer", render: function(){ return React.createElement("p", null,  'www.agendakar.com'); } });
+var Footer = React.createClass({displayName: "Footer", render: function(){
+  return React.createElement("p", null, React.createElement('a', { href: 'www.agendakar.com' }, "Widget par agendakar.com"));
+} });
 
 var AgendakarWidget = React.createClass({
   displayName: 'Agendakar',
