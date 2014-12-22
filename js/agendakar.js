@@ -12,7 +12,7 @@ var Evenement = React.createClass({
     return(
       React.createElement("li", null,
         React.createElement("a", {href: this.get_link(_event.id), target: "_blank"},
-          "Le "+ _event.date_de_debut +" a "+ _event.heure_de_debut+" ", React.createElement("br"), React.createElement("b", null, _event.nom)
+          "Le "+ _event.date_de_debut +" a partir de "+ _event.heure_de_debut+" ", React.createElement("br"), React.createElement("b", null, _event.nom)
         )
       )
     );
@@ -57,9 +57,14 @@ var AgendakarWidget = React.createClass({
   },
 
   render: function(){
+    var style = {
+      margin: '150px 40px;',
+      display: this.state.didFetchData ? "none" : "block"
+    };
     return(
       React.createElement("div", {className: "agendakar-widget"},
         React.createElement(Header, {value: "Cette semaine sur Agendakar.com"}),
+        React.createElement("div", {style: style}, "CHARGEMENT EN COURS..."),
         React.createElement(EventList, {liste: this.state.events})
       )
     );
