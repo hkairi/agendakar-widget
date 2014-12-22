@@ -5,13 +5,24 @@ var React, $, alert, $;
 var Evenement = React.createClass({
   displayName: 'Evenement',
 
-  get_link: function(id){ return "http://www.agendakar.com/agenda/" + id; },
+  getInitialState: function(){
+    return { detail: false };
+  },
+
+  get_link: function(id){ return "#http://www.agendakar.com/agenda/"+id+"?utm_source=widget"; },
+
+  handleClick: function(e){
+    e.preventDefault();
+    this.setState({ detail: ! this.state.detail });
+  },
 
   render: function(){
-    var _event = this.props.event;
+    var _event = this.props.event,
+        _style = { height: this.state.detail ? "120px" : "auto" };
+
     return(
-      React.createElement("li", null,
-        React.createElement("a", {href: this.get_link(_event.id), target: "_blank"},
+      React.createElement("li", { style: _style },
+        React.createElement("a", { href: this.get_link(_event.id), target: "_blank", onClick: this.handleClick },
           "Le "+ _event.date_de_debut +" a partir de "+ _event.heure_de_debut+" ", React.createElement("br"), React.createElement("b", null, _event.nom)
         )
       )
