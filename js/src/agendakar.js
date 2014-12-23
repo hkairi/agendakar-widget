@@ -154,20 +154,18 @@ var AgendakarWidget= React.createClass({
   evenements : [],
   isLoading  : true,
   url        : 'http://www.agendakar.com/api/events.json',
-  url_dev    : 'http://localhost:3000/api/events.json',
 
   getInitialState: function(){
     return {
       evenements : [],
       isLoading  : true,
       url        : 'http://www.agendakar.com/api/events.json',
-      url_dev    : 'http://localhost:3000/api/events.json'
     }
   },
 
   componentDidMount: function(){
     var self = this;
-    $.get(this.state.url_dev)
+    $.get(this.state.url)
     .done(function(data){
       self.setState({ isLoading: false, evenements: data });
     })
