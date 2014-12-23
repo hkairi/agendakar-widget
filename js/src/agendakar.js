@@ -1,22 +1,23 @@
 var React;
+
 var Header= React.createClass({
-  displayName: "Header",
-  logo_url: "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png",
+  displayName : "Header",
+  logo_url    : "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png",
 
   render: function(){
     var style = {
-      width: '60px;',
-      height: '60px;',
-      background: '#fff;',
-      borderRadius: '1000px;',
-      display: 'block;',
-      float: 'left;',
-      margin: '2px;'
+      width        : '60px;',
+      height       : '60px;',
+      background   : '#fff;',
+      borderRadius : '1000px;',
+      display      : 'block;',
+      float        : 'left;',
+      margin       : '2px;'
     };
 
     var img_style = {
-      width:'50px;',
-      margin:'6px;'
+      width  : '50px;',
+      margin : '6px;'
     };
 
     return(
@@ -31,15 +32,19 @@ var Header= React.createClass({
 });
 
 var Evenement = React.createClass({
-  displayName: "Evenement",
+  displayName : "Evenement",
+
   render: function(){
     var _style = {
-      margin: '0px',
-      padding: '0px',
-      fontSize:'12px',
-      width: '100%'
-    }
-    a = { margin:'0px', padding:'0px' };
+      margin   : '0px',
+      padding  : '0px',
+      fontSize : '12px',
+      width    : '100%'
+    },
+    a = {
+      margin  : '0px',
+      padding :'0px'
+    };
 
     return(
       <li>
@@ -57,17 +62,22 @@ var Evenement = React.createClass({
   }
 });
 
-var Liste= React.createClass({
+var Liste = React.createClass({
   displayName: 'Agenda',
 
   render: function(){
-    var liste;
+    var l = {
+      height: '230px',
+      overflow: 'auto'
+    },
     liste = [];
+
     this.props.evenements.map(function(e){
       liste.push(<Evenement nom={e.nom} date={e.date_de_debut} heure={e.heure_de_debut}/>)
     });
+
     return(
-      <div>
+      <div style={l}>
         {liste}
       </div>
     );
@@ -104,9 +114,9 @@ var Footer= React.createClass({
 
 var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
-  evenements: [],
-  isLoading: true,
-  url: 'http://www.agendakar.com/api/events.json',
+  evenements : [],
+  isLoading  : true,
+  url        : 'http://www.agendakar.com/api/events.json',
 
   getInitialState: function(){
     return {
@@ -119,19 +129,25 @@ var AgendakarWidget= React.createClass({
   componentDidMount: function(){
     var self = this;
     $.get(this.state.url)
-    .done(function(data){ self.setState({ isLoading: false, evenements: data }); })
-    .fail(function(){ alert("oups"); });
+    .done(function(data){
+      self.setState({ isLoading: false, evenements: data });
+    })
+    .fail(function(){
+      alert("oups");
+    });
   },
+
   render: function(){
     var styles = {
       width: '300px',
       height: '330px',
       float: 'right'
-    }
+    },
     toShow = {
       textAlign: 'center',
       display: this.state.isLoading ? 'block' : 'none'
     };
+
     return(
       <div style={styles}>
         <Header titre="L'agenda cette semaine"/>
