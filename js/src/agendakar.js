@@ -19,7 +19,6 @@ var Liste= React.createClass({
   render: function(){
     return(
       <div>
-        <h1>Liste</h1>
         <Evenement />
         <Evenement />
         <Evenement />
