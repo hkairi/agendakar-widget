@@ -21,12 +21,12 @@ var Header= React.createClass({
     };
 
     return(
-      <div>
-        <div style={style}>
-          <img src={this.logo_url} style={img_style}/>
-        </div>
-        <h1>{this.props.titre}</h1>
-      </div>
+      React.createElement("div", null, 
+        React.createElement("div", {style: style}, 
+          React.createElement("img", {src: this.logo_url, style: img_style})
+        ), 
+        React.createElement("h1", null, this.props.titre)
+      )
     );
   }
 });
@@ -57,40 +57,41 @@ var Evenement = React.createClass({
       width    : '100%'
     },
     li_style = {
-      height  : this.state.iscollapsed ? 'auto' : '100px'
+      height  : this.state.iscollapsed ? 'auto' : '150px'
     },
     c = {
       display : this.state.iscollapsed ? 'none' : 'block'
     },
-    d = {
-      display : this.state.iscollapsed ? 'none' : 'block',
-      color   : '#FFF',
-      margin  : 0
-    },
     a = {
       margin  : '0px',
-      padding : '0px'
+      padding :'0px'
     },
     ac = {
-      width     : '100%',
-      textAlign : 'center'
+      width: '100%',
+      textAlign: 'center'
     };
 
     return(
-      <li style={li_style} onClick={this.handleClick}>
-        <div>
-        <table style={_style}>
-          <tr>
-            <td>Le {this.props.date}</td>
-            <td>{this.props.heure}</td>
-          </tr>
-          <tr><td colSpan='2'><a href={this.get_url(this.props.id)} style={a}> {this.props.nom} </a></td></tr>
-          </table>
-          <p style={d}>
-            <a href={this.get_url(this.props.id)} style={ac}>Voir sur agendakar.com</a>
-          </p>
-        </div>
-      </li>
+      React.createElement("li", {style: li_style, onClick: this.handleClick}, 
+        React.createElement("div", null, 
+        React.createElement("table", {style: _style}, 
+          React.createElement("tr", null, 
+            React.createElement("td", null, "Le ", this.props.date), 
+            React.createElement("td", null, this.props.heure)
+          ), 
+          React.createElement("tr", null, React.createElement("td", {colSpan: "2"}, React.createElement("a", {href: this.get_url(this.props.id), style: a}, " ", this.props.nom, " "))), 
+          React.createElement("tr", {style: c}, 
+            React.createElement("td", null, this.props.endroit), 
+            React.createElement("td", null, this.props.quartier)
+          ), 
+          React.createElement("tr", {style: c}, 
+            React.createElement("td", {colSpan: "2"}, 
+              React.createElement("a", {href: this.get_url(this.props.id), style: ac}, "Voir sur agendakar.com")
+            )
+          )
+        )
+        )
+      )
     );
   }
 });
@@ -108,19 +109,19 @@ var Liste = React.createClass({
     this.props.evenements.map(function(d){
       var e = d.data;
       liste.push(
-        <Evenement key={e.id} id={e.slug} nom={e.nom} date={e.date_de_debut} heure={e.heure_de_debut} endroit={e.nom_endroit} quartier={e.quartier}/>
+        React.createElement(Evenement, {key: e.id, id: e.slug, nom: e.nom, date: e.date_de_debut, heure: e.heure_de_debut, endroit: e.nom_endroit, quartier: e.quartier})
       )
     });
 
     return(
-      <div style={l}>
-        {liste}
-      </div>
+      React.createElement("div", {style: l}, 
+        liste
+      )
     );
   }
 });
 
-var Footer= React.createClass({
+var Footer= React.createClass({displayName: "Footer",
   render: function(){
     var footer_style = {
       borderTop: '1px solid #DDD'
@@ -140,11 +141,11 @@ var Footer= React.createClass({
     };
 
     return(
-      <div style={footer_style}>
-        <a href="http://www.agendakar.com" target="_blank">
-          <h2 style={h2}>aller sur agendakar</h2>
-        </a>
-      </div>
+      React.createElement("div", {style: footer_style}, 
+        React.createElement("a", {href: "http://www.agendakar.com", target: "_blank"}, 
+          React.createElement("h2", {style: h2}, "aller sur agendakar")
+        )
+      )
     );
   }
 });
@@ -188,16 +189,16 @@ var AgendakarWidget= React.createClass({
     };
 
     return(
-      <div style={styles}>
-        <Header titre="L'agenda cette semaine"/>
-        <h2 style={toShow}>Chargement en cours ...</h2>
-        <Liste evenements={this.state.evenements}/>
-        <Footer />
-      </div>
+      React.createElement("div", {style: styles}, 
+        React.createElement(Header, {titre: "L'agenda cette semaine"}), 
+        React.createElement("h2", {style: toShow}, "Chargement en cours ..."), 
+        React.createElement(Liste, {evenements: this.state.evenements}), 
+        React.createElement(Footer, null)
+      )
     );
   }
 });
 
 React.render(
-  <AgendakarWidget />, document.getElementById('content')
+  React.createElement(AgendakarWidget, null), document.getElementById('content')
 );
