@@ -40,7 +40,8 @@ var AgendakarWidget= React.createClass({
   render: function(){
     var styles = {
       width: '300px',
-      height: '300px',
+      height: '400px',
+      border: '1px solid #A3ABAC',
       float: 'right'
     };
     return(

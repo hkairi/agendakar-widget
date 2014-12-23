@@ -1,0 +1,170 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'react-tools',
+1 verbose cli   '-g',
+1 verbose cli   '66force' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.34
+4 verbose cache add [ 'react-tools', null ]
+5 verbose cache add name=undefined spec="react-tools" args=["react-tools",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'react-tools',
+6 verbose parsed url   path: 'react-tools',
+6 verbose parsed url   href: 'react-tools' }
+7 verbose cache add [ '66force', null ]
+8 verbose cache add name=undefined spec="66force" args=["66force",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '66force',
+9 verbose parsed url   path: '66force',
+9 verbose parsed url   href: '66force' }
+10 silly lockFile 0f761efe-react-tools react-tools
+11 verbose lock react-tools /Users/Alassane/.npm/0f761efe-react-tools.lock
+12 silly lockFile 1eede0f7-66force 66force
+13 verbose lock 66force /Users/Alassane/.npm/1eede0f7-66force.lock
+14 silly lockFile 0f761efe-react-tools react-tools
+15 silly lockFile 0f761efe-react-tools react-tools
+16 silly lockFile 1eede0f7-66force 66force
+17 silly lockFile 1eede0f7-66force 66force
+18 verbose addNamed [ 'react-tools', '' ]
+19 verbose addNamed [ null, '*' ]
+20 silly lockFile 47fcd5e0-react-tools react-tools@
+21 verbose lock react-tools@ /Users/Alassane/.npm/47fcd5e0-react-tools.lock
+22 verbose addNamed [ '66force', '' ]
+23 verbose addNamed [ null, '*' ]
+24 silly lockFile 78fd87c1-66force 66force@
+25 verbose lock 66force@ /Users/Alassane/.npm/78fd87c1-66force.lock
+26 silly addNameRange { name: 'react-tools', range: '*', hasData: false }
+27 silly addNameRange { name: '66force', range: '*', hasData: false }
+28 verbose request where is /react-tools
+29 verbose request registry https://registry.npmjs.org/
+30 verbose request id 0f67afd87dada89b
+31 verbose url raw /react-tools
+32 verbose url resolving [ 'https://registry.npmjs.org/', './react-tools' ]
+33 verbose url resolved https://registry.npmjs.org/react-tools
+34 verbose request where is https://registry.npmjs.org/react-tools
+35 info trying registry request attempt 1 at 15:19:38
+36 verbose etag "5H5SL42MYPPVI2QLUAX8RPH2P"
+37 http GET https://registry.npmjs.org/react-tools
+38 verbose request where is /66force
+39 verbose request registry https://registry.npmjs.org/
+40 verbose url raw /66force
+41 verbose url resolving [ 'https://registry.npmjs.org/', './66force' ]
+42 verbose url resolved https://registry.npmjs.org/66force
+43 verbose request where is https://registry.npmjs.org/66force
+44 info trying registry request attempt 1 at 15:19:38
+45 http GET https://registry.npmjs.org/66force
+46 http 304 https://registry.npmjs.org/react-tools
+47 silly registry.get cb [ 304,
+47 silly registry.get   { date: 'Tue, 23 Dec 2014 15:19:17 GMT',
+47 silly registry.get     server: 'Apache',
+47 silly registry.get     via: '1.1 varnish',
+47 silly registry.get     'last-modified': 'Tue, 23 Dec 2014 15:19:17 GMT',
+47 silly registry.get     'cache-control': 'max-age=60',
+47 silly registry.get     etag: '"5H5SL42MYPPVI2QLUAX8RPH2P"',
+47 silly registry.get     age: '0',
+47 silly registry.get     'x-served-by': 'cache-ams4147-AMS',
+47 silly registry.get     'x-cache': 'HIT',
+47 silly registry.get     'x-cache-hits': '1',
+47 silly registry.get     'x-timer': 'S1419347957.608859,VS0,VE90',
+47 silly registry.get     vary: 'Accept',
+47 silly registry.get     'content-length': '0',
+47 silly registry.get     'keep-alive': 'timeout=10, max=50',
+47 silly registry.get     connection: 'Keep-Alive' } ]
+48 verbose etag https://registry.npmjs.org/react-tools from cache
+49 silly addNameRange number 2 { name: 'react-tools', range: '*', hasData: true }
+50 silly addNameRange versions [ 'react-tools',
+50 silly addNameRange   [ '0.3.0',
+50 silly addNameRange     '0.3.1',
+50 silly addNameRange     '0.3.2',
+50 silly addNameRange     '0.3.3',
+50 silly addNameRange     '0.4.0',
+50 silly addNameRange     '0.4.1',
+50 silly addNameRange     '0.5.0',
+50 silly addNameRange     '0.5.1',
+50 silly addNameRange     '0.4.2',
+50 silly addNameRange     '0.5.2',
+50 silly addNameRange     '0.8.0',
+50 silly addNameRange     '0.9.0-rc1',
+50 silly addNameRange     '0.9.0',
+50 silly addNameRange     '0.10.0-rc1',
+50 silly addNameRange     '0.10.0',
+50 silly addNameRange     '0.11.0-rc1',
+50 silly addNameRange     '0.11.0',
+50 silly addNameRange     '0.11.1',
+50 silly addNameRange     '0.11.2',
+50 silly addNameRange     '0.12.0-rc1',
+50 silly addNameRange     '0.12.0',
+50 silly addNameRange     '0.12.1',
+50 silly addNameRange     '0.12.2' ] ]
+51 verbose addNamed [ 'react-tools', '0.12.2' ]
+52 verbose addNamed [ '0.12.2', '0.12.2' ]
+53 silly lockFile d49341b9-react-tools-0-12-2 react-tools@0.12.2
+54 verbose lock react-tools@0.12.2 /Users/Alassane/.npm/d49341b9-react-tools-0-12-2.lock
+55 silly lockFile d49341b9-react-tools-0-12-2 react-tools@0.12.2
+56 silly lockFile d49341b9-react-tools-0-12-2 react-tools@0.12.2
+57 silly lockFile 47fcd5e0-react-tools react-tools@
+58 silly lockFile 47fcd5e0-react-tools react-tools@
+59 http 404 https://registry.npmjs.org/66force
+60 verbose headers { date: 'Tue, 23 Dec 2014 15:19:17 GMT',
+60 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+60 verbose headers   'content-type': 'application/json',
+60 verbose headers   'cache-control': 'max-age=0',
+60 verbose headers   'content-length': '52',
+60 verbose headers   'accept-ranges': 'bytes',
+60 verbose headers   via: '1.1 varnish',
+60 verbose headers   age: '0',
+60 verbose headers   'x-served-by': 'cache-ams4121-AMS',
+60 verbose headers   'x-cache': 'MISS',
+60 verbose headers   'x-cache-hits': '0',
+60 verbose headers   'x-timer': 'S1419347957.618209,VS0,VE158',
+60 verbose headers   'keep-alive': 'timeout=10, max=50',
+60 verbose headers   connection: 'Keep-Alive' }
+61 silly registry.get cb [ 404,
+61 silly registry.get   { date: 'Tue, 23 Dec 2014 15:19:17 GMT',
+61 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+61 silly registry.get     'content-type': 'application/json',
+61 silly registry.get     'cache-control': 'max-age=0',
+61 silly registry.get     'content-length': '52',
+61 silly registry.get     'accept-ranges': 'bytes',
+61 silly registry.get     via: '1.1 varnish',
+61 silly registry.get     age: '0',
+61 silly registry.get     'x-served-by': 'cache-ams4121-AMS',
+61 silly registry.get     'x-cache': 'MISS',
+61 silly registry.get     'x-cache-hits': '0',
+61 silly registry.get     'x-timer': 'S1419347957.618209,VS0,VE158',
+61 silly registry.get     'keep-alive': 'timeout=10, max=50',
+61 silly registry.get     connection: 'Keep-Alive' } ]
+62 silly lockFile 78fd87c1-66force 66force@
+63 silly lockFile 78fd87c1-66force 66force@
+64 error 404 404 Not Found: 66force
+64 error 404
+64 error 404 '66force' is not in the npm registry.
+64 error 404 You should bug the author to publish it
+64 error 404
+64 error 404 Note that you can also install from a
+64 error 404 tarball, folder, or http url, or git url.
+65 error System Darwin 14.0.0
+66 error command "node" "/usr/local/bin/npm" "install" "react-tools" "-g" "66force"
+67 error cwd /Volumes/Data/Work/GitHub/agd-react-widget
+68 error node -v v0.10.34
+69 error npm -v 1.4.28
+70 error code E404
+71 verbose exit [ 1, true ]
