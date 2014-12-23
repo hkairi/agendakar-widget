@@ -57,6 +57,7 @@ var AgendakarWidget= React.createClass({
     return(
       <div style={styles}>
         <Header />
+        <h1 style={toShow}>Chargement en cours ...</h1>
         <Liste />
         <Footer />
       </div>
