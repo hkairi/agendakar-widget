@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang='fr'>
   <head>
-    <title>Agendakar Widget (using React)</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Hello React</title>
+    <style>
+      button{
+        border: 1px solid blue;
+        padding: 4px;
+        background: white;
+        margin: 5px;
+      }
+    </style>
   </head>
   <body>
     <div id="content"></div>
@@ -10,14 +17,6 @@
     <script src="js/react.0.12.1.js"></script>
     <script src="js/jsxt.js"></script>
     <script src="js/jquery-1.10.0.min.js"></script>
-    <script src="js/agendakar.js"></script>
-
-    <script>
-      React.render(
-        React.createElement(AgendakarWidget, null),
-        document.getElementById('content')
-      );
-    </script>
-
+    <script src="js/build/agendakar.js"></script>
   </body>
 </html>

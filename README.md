@@ -1,1 +1,0 @@
-  Agendakar React Widget
