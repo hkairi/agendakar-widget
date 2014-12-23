@@ -1,7 +1,7 @@
 var React;
 var Header= React.createClass({
     displayName: "Header",
-    render: function(){
+  render: function(){
     return( React.createElement("div", null, React.createElement("span", null, React.createElement("img", {src: "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png"})), React.createElement("h1", null, "Agendakar"), " "));
   }
 });

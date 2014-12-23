@@ -1,12 +1,14 @@
 var React;
 var Header= React.createClass({
-  render: function(){
-    return( <div> <h1>Agendakar</h1> </div>);
+    displayName: "Header",
+    render: function(){
+    return( <div><span><img src="http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png" /></span><h1>Agendakar</h1> </div>);
   }
 });
 
 var Evenement = React.createClass({
-  render: function(){
+    displayName: "Evenement",
+    render: function(){
     return(
       <li>
         <a href='#'> titre </a>
@@ -30,7 +32,7 @@ var Liste= React.createClass({
 
 var Footer= React.createClass({
   render: function(){
-    return( <div> <h1>Footer</h1> </div>);
+    return( <div> <a href="http://www.agendakar.com" target="_blank"><h2>aller sur agendakar</h2></a></div>);
   }
 });
 

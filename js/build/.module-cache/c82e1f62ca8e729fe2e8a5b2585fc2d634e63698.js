@@ -1,14 +1,12 @@
 var React;
-var Header= React.createClass({
-    displayName: "Header",
-    render: function(){
-    return( React.createElement("div", null, React.createElement("span", null, React.createElement("img", {src: "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png"})), React.createElement("h1", null, "Agendakar"), " "));
+var Header= React.createClass({displayName: "Header",
+  render: function(){
+    return( React.createElement("div", null, " ", React.createElement("h1", null, "Agendakar"), " "));
   }
 });
 
-var Evenement = React.createClass({
-    displayName: "Evenement",
-    render: function(){
+var Evenement = React.createClass({displayName: "Evenement",
+  render: function(){
     return(
       React.createElement("li", null, 
         React.createElement("a", {href: "#"}, " titre ")
@@ -32,7 +30,7 @@ var Liste= React.createClass({displayName: "Liste",
 
 var Footer= React.createClass({displayName: "Footer",
   render: function(){
-    return( React.createElement("div", null, " ", React.createElement("a", {href: "http://www.agendakar.com", target: "_blank"}, React.createElement("h2", null, "aller sur agendakar"))));
+    return( React.createElement("div", null, " ", React.createElement("a", {href: "http://www.agendakar.com", target: "_blank"}, React.createElement("h2", null, "Footer"))));
   }
 });
 
