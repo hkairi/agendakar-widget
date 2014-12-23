@@ -34,6 +34,10 @@ var Header= React.createClass({
 var Evenement = React.createClass({
   displayName : "Evenement",
 
+  get_url: function(id){
+    return 'http://www.agendakar.com/agenda/' + id;
+  },
+
   render: function(){
     var _style = {
       margin   : '0px',
@@ -54,7 +58,7 @@ var Evenement = React.createClass({
             <td>Le {this.props.date}</td>
             <td>{this.props.heure}</td>
           </tr>
-          <tr><td colSpan='2'><a href='#' style={a}> {this.props.nom} </a></td></tr>
+          <tr><td colSpan='2'><a href={this.get_url(this.props.id)} style={a}> {this.props.nom} </a></td></tr>
         </table>
         </div>
       </li>
@@ -73,7 +77,7 @@ var Liste = React.createClass({
     liste = [];
 
     this.props.evenements.map(function(e){
-      liste.push(<Evenement nom={e.nom} date={e.date_de_debut} heure={e.heure_de_debut}/>)
+      liste.push(<Evenement key={e.id} id={e.id} nom={e.nom} date={e.date_de_debut} heure={e.heure_de_debut}/>)
     });
 
     return(
