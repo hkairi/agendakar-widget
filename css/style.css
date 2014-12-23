@@ -1,32 +1,14 @@
 * {font-family: 'Dosis', sans-serif;}
 * a {text-decoration: none;}
 
-ul {
-    padding:0;
-    margin:0
-}
+ul { padding:0; margin:0 }
 
-span {
-    width: 60px;
-    height: 60px;
-    background: #fff;
-    border-radius: 1000px;
-    display: block;
-    float: left;
-    margin: 2px;
-}
-
-img {
-    width: 50px;
-    margin: 6px;
-}
-
-li { 
+li {
     list-style: none;
     margin: 0;
     border-bottom: 1px solid #a3abac;
     font-family: 'Dosis', sans-serif;
-    font-size: 18px; 
+    font-size: 18px;
     line-height: 24px;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -61,22 +43,21 @@ li:hover a {
     z-index: 1000;
 }
 
-li a { 
-    color: #000; 
-    text-decoration:none; 
+li a {
+    color: #000;
+    text-decoration:none;
     font-size:12px;
     width: 100%;
     display: block;
     padding: 13px;
 }
 
-li a:hover { 
+li a:hover {
     text-decoration:none;
 }
 
-h1 { 
+h1 {
     font-size: 20px;
-    text-align: center;
     height: 65px;
     line-height: 65px;
     font-family: 'Dosis', sans-serif;
@@ -84,9 +65,9 @@ h1 {
     text-transform: uppercase;
     background: #396eb5;
     color: #fff ;
-    margin: 0px 0px 0px -60px !important;
+    margin: 0px !important;
 }
-a h2 { 
+a h2 {
     font-size: 16px;
     text-align: center;
     height: 20px;
