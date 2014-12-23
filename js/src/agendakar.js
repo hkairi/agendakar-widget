@@ -12,12 +12,17 @@ var Header= React.createClass({
       'float': 'left;',
       margin: '2px;'
     };
+    var img_style = {
+      width:'50px;',
+      margin:'6px;'
+    };
+
     return(
       <div>
         <div style={style}>
-          <img src="http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png" />
+          <img src="http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png" style={img_style}/>
         </div>
-        <h1>Agendakar</h1>
+        <h1>{this.props.titre}</h1>
       </div>
     );
   }
@@ -49,7 +54,13 @@ var Liste= React.createClass({
 
 var Footer= React.createClass({
   render: function(){
-    return( <div> <a href="http://www.agendakar.com" target="_blank"><h2>aller sur agendakar</h2></a></div>);
+    return(
+      <div>
+        <a href="http://www.agendakar.com" target="_blank">
+          <h2>aller sur agendakar</h2>
+        </a>
+      </div>
+    );
   }
 });
 
@@ -84,7 +95,7 @@ var AgendakarWidget= React.createClass({
     };
     return(
       <div style={styles}>
-        <Header />
+        <Header titre="L'agenda cette semaine"/>
         <h1 style={toShow}>Chargement en cours ...</h1>
         <Liste />
         <Footer />
