@@ -67,8 +67,8 @@ var Liste = React.createClass({
 
   render: function(){
     var l = {
-      height: '230px',
-      overflow: 'auto'
+      height   : '230px',
+      overflow : 'auto'
     },
     liste = [];
 
@@ -90,18 +90,19 @@ var Footer= React.createClass({
       borderTop: '1px solid #DDD'
     },
     h2 = {
-      fontSize: '16px;',
-      textAlign: 'center;',
-      height: '20px;',
-      fontFamily: "'Dosis', sans-serif;",
-      fontweight: '100;',
-      textTransform: 'uppercase;',
-      background: '#a3abac;',
-      color: '#fff ;',
-      margin: '0px !important;',
-      padding: '5px 0px;',
-      textDecoration: 'none;'
+      fontSize       : '16px;',
+      textAlign      : 'center;',
+      height         : '20px;',
+      fontFamily     : "'Dosis', sans-serif;",
+      fontweight     : '100;',
+      textTransform  : 'uppercase;',
+      background     : '#a3abac;',
+      color          : '#fff ;',
+      margin         : '0px !important;',
+      padding        : '5px 0px;',
+      textDecoration : 'none;'
     };
+
     return(
       <div style={footer_style}>
         <a href="http://www.agendakar.com" target="_blank">
@@ -120,9 +121,9 @@ var AgendakarWidget= React.createClass({
 
   getInitialState: function(){
     return {
-      evenements: [],
-      isLoading: true,
-      url: 'http://www.agendakar.com/api/events.json'
+      evenements : [],
+      isLoading  : true,
+      url        : 'http://www.agendakar.com/api/events.json'
     }
   },
 
@@ -139,13 +140,13 @@ var AgendakarWidget= React.createClass({
 
   render: function(){
     var styles = {
-      width: '300px',
-      height: '330px',
-      float: 'right'
+      width  : '300px',
+      height : '330px',
+      float  : 'right'
     },
     toShow = {
-      textAlign: 'center',
-      display: this.state.isLoading ? 'block' : 'none'
+      textAlign : 'center',
+      display   : this.state.isLoading ? 'block' : 'none'
     };
 
     return(
