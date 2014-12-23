@@ -39,11 +39,20 @@ var Footer= React.createClass({
 var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
 
+  getInitialState: function(){
+    return {
+      isLoading: false
+    };
+  },
+
   render: function(){
     var styles = {
       width: '300px',
       height: '300px',
       float: 'right'
+    };
+    var toShow = {
+      display: this.state.isLoading ? "block" : "none"
     };
     return(
       <div style={styles}>
