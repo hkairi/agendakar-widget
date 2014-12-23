@@ -45,6 +45,10 @@ var AgendakarWidget= React.createClass({
     };
   },
 
+  componentDidMount: function(){
+    this.setState({ isLoading: false });
+  },
+
   render: function(){
     var styles = {
       width: '300px',
