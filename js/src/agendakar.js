@@ -39,8 +39,15 @@ var Footer= React.createClass({
 var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
 
+  loadEvent: function(){
+    return(
+      $.get(this.state.url).then(function(data){ return data; });
+    );
+  },
+
   getInitialState: function(){
     return {
+      url: 'http://www.agendakar.com/api/events.json',
       isLoading: false
     };
   },
