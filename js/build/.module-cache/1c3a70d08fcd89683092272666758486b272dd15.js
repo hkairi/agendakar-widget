@@ -1,16 +1,16 @@
 var React;
 var Header= React.createClass({
   displayName: "Header",
-  logo_url: "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png",
 
+  logo_url: "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png",
   render: function(){
     var style = {
       width: '60px;',
       height: '60px;',
       background: '#fff;',
-      borderRadius: '1000px;',
+      'border-radius': '1000px;',
       display: 'block;',
-      float: 'left;',
+      'float': 'left;',
       margin: '2px;'
     };
 
@@ -36,20 +36,22 @@ var Evenement = React.createClass({
     var _style = {
       margin: '0px',
       padding: '0px',
-      fontSize:'12px',
+      'font-size':'12px',
       width: '100%'
     }
-    a = { margin:'0px', padding:'0px' };
-
+    a = {
+      margin:'0px',
+      padding:'0px'
+    };
     return(
       React.createElement("li", null, 
         React.createElement("div", null, 
         React.createElement("table", {style: _style}, 
           React.createElement("tr", null, 
-            React.createElement("td", null, "Le ", this.props.date), 
-            React.createElement("td", null, this.props.heure)
+            React.createElement("td", null, "Le 25-12-2014"), 
+            React.createElement("td", null, "21:00")
           ), 
-          React.createElement("tr", null, React.createElement("td", {colSpan: "2"}, React.createElement("a", {href: "#", style: a}, " ", this.props.nom, " ")))
+          React.createElement("tr", null, React.createElement("td", {colspan: "2"}, React.createElement("a", {href: "#", style: a}, " titre ")))
         )
         )
       )
@@ -57,18 +59,14 @@ var Evenement = React.createClass({
   }
 });
 
-var Liste= React.createClass({
-  displayName: 'Agenda',
-
+var Liste= React.createClass({displayName: "Liste",
   render: function(){
-    var liste;
-    liste = [];
-    this.props.evenements.map(function(e){
-      liste.push(React.createElement(Evenement, {nom: e.nom, date: e.date_de_debut, heure: e.heure_de_debut}))
-    });
     return(
       React.createElement("div", null, 
-        liste
+        React.createElement(Evenement, null), 
+        React.createElement(Evenement, null), 
+        React.createElement(Evenement, null), 
+        React.createElement(Evenement, null)
       )
     );
   }
@@ -77,25 +75,12 @@ var Liste= React.createClass({
 var Footer= React.createClass({displayName: "Footer",
   render: function(){
     var footer_style = {
-      borderTop: '1px solid #DDD'
-    },
-    h2 = {
-      fontSize: '16px;',
-      textAlign: 'center;',
-      height: '20px;',
-      fontFamily: "'Dosis', sans-serif;",
-      fontweight: '100;',
-      textTransform: 'uppercase;',
-      background: '#a3abac;',
-      color: '#fff ;',
-      margin: '0px !important;',
-      padding: '5px 0px;',
-      textDecoration: 'none;'
+      'border-top': '1px solid #DDD'
     };
     return(
       React.createElement("div", {style: footer_style}, 
         React.createElement("a", {href: "http://www.agendakar.com", target: "_blank"}, 
-          React.createElement("h2", {style: h2}, "aller sur agendakar")
+          React.createElement("h2", null, "aller sur agendakar")
         )
       )
     );
@@ -104,39 +89,38 @@ var Footer= React.createClass({displayName: "Footer",
 
 var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
-  evenements: [],
-  isLoading: true,
-  url: 'http://www.agendakar.com/api/events.json',
+
+  loadEvent: function(){
+    return(
+      $.get(this.state.url).then(function(data){ return data; })
+    );
+  },
 
   getInitialState: function(){
     return {
-      evenements: [],
-      isLoading: true,
-      url: 'http://www.agendakar.com/api/events.json'
-    }
+      url: 'http://www.agendakar.com/api/events.json',
+      isLoading: false
+    };
   },
 
   componentDidMount: function(){
-    var self = this;
-    $.get(this.state.url)
-    .done(function(data){ self.setState({ isLoading: false, evenements: data }); })
-    .fail(function(){ alert("oups"); });
+    this.setState({ isLoading: false });
   },
+
   render: function(){
     var styles = {
       width: '300px',
-      height: '330px',
+      height: '340px',
       float: 'right'
-    }
-    toShow = {
-      textAlign: 'center',
-      display: this.state.isLoading ? 'block' : 'none'
+    };
+    var toShow = {
+      display: this.state.isLoading ? "block" : "none"
     };
     return(
       React.createElement("div", {style: styles}, 
         React.createElement(Header, {titre: "L'agenda cette semaine"}), 
-        React.createElement("h2", {style: toShow}, "Chargement en cours ..."), 
-        React.createElement(Liste, {evenements: this.state.evenements}), 
+        React.createElement("h1", {style: toShow}, "Chargement en cours ..."), 
+        React.createElement(Liste, null), 
         React.createElement(Footer, null)
       )
     );

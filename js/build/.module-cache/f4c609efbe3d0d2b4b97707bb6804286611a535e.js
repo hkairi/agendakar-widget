@@ -36,7 +36,7 @@ var Evenement = React.createClass({
     var _style = {
       margin: '0px',
       padding: '0px',
-      fontSize:'12px',
+      'font-size':'12px',
       width: '100%'
     }
     a = { margin:'0px', padding:'0px' };
@@ -46,10 +46,10 @@ var Evenement = React.createClass({
         React.createElement("div", null, 
         React.createElement("table", {style: _style}, 
           React.createElement("tr", null, 
-            React.createElement("td", null, "Le ", this.props.date), 
-            React.createElement("td", null, this.props.heure)
+            React.createElement("td", null, "Le ", this.props.date_de_debut), 
+            React.createElement("td", null, this.props.heure_de_debut)
           ), 
-          React.createElement("tr", null, React.createElement("td", {colSpan: "2"}, React.createElement("a", {href: "#", style: a}, " ", this.props.nom, " ")))
+          React.createElement("tr", null, React.createElement("td", {colspan: "2"}, React.createElement("a", {href: "#", style: a}, " ", this.props.nom, " ")))
         )
         )
       )
@@ -59,16 +59,36 @@ var Evenement = React.createClass({
 
 var Liste= React.createClass({
   displayName: 'Agenda',
+  isLoading: null,
 
-  render: function(){
-    var liste;
-    liste = [];
-    this.props.evenements.map(function(e){
-      liste.push(React.createElement(Evenement, {nom: e.nom, date: e.date_de_debut, heure: e.heure_de_debut}))
+  loadEvent: function(){
+    return(
+      $.get(this.state.url).then(function(data){ return data; })
+    );
+  },
+
+  getInitialState: function(){
+    return {
+      url: 'http://www.agendakar.com/api/events.json',
+      isLoading: true
+    };
+  },
+
+  componentDidMount: function(){
+    $.get().then(function(){
+
     });
+    this.setState({ isLoading: false });
+  },
+  render: function(){
+    var toShow = { display: this.state.isLoading ? "block" : "none" };
     return(
       React.createElement("div", null, 
-        liste
+        React.createElement("h1", {style: toShow}, "Chargement en cours ..."), 
+        React.createElement(Evenement, null), 
+        React.createElement(Evenement, null), 
+        React.createElement(Evenement, null), 
+        React.createElement(Evenement, null)
       )
     );
   }
@@ -77,7 +97,7 @@ var Liste= React.createClass({
 var Footer= React.createClass({displayName: "Footer",
   render: function(){
     var footer_style = {
-      borderTop: '1px solid #DDD'
+      'border-top': '1px solid #DDD'
     },
     h2 = {
       fontSize: '16px;',
@@ -104,39 +124,17 @@ var Footer= React.createClass({displayName: "Footer",
 
 var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
-  evenements: [],
-  isLoading: true,
-  url: 'http://www.agendakar.com/api/events.json',
 
-  getInitialState: function(){
-    return {
-      evenements: [],
-      isLoading: true,
-      url: 'http://www.agendakar.com/api/events.json'
-    }
-  },
-
-  componentDidMount: function(){
-    var self = this;
-    $.get(this.state.url)
-    .done(function(data){ self.setState({ isLoading: false, evenements: data }); })
-    .fail(function(){ alert("oups"); });
-  },
   render: function(){
     var styles = {
       width: '300px',
       height: '330px',
       float: 'right'
-    }
-    toShow = {
-      textAlign: 'center',
-      display: this.state.isLoading ? 'block' : 'none'
     };
     return(
       React.createElement("div", {style: styles}, 
         React.createElement(Header, {titre: "L'agenda cette semaine"}), 
-        React.createElement("h2", {style: toShow}, "Chargement en cours ..."), 
-        React.createElement(Liste, {evenements: this.state.evenements}), 
+        React.createElement(Liste, null), 
         React.createElement(Footer, null)
       )
     );

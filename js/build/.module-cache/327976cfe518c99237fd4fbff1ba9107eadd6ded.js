@@ -61,14 +61,11 @@ var Liste= React.createClass({
   displayName: 'Agenda',
 
   render: function(){
-    var liste;
-    liste = [];
-    this.props.evenements.map(function(e){
-      liste.push(React.createElement(Evenement, {nom: e.nom, date: e.date_de_debut, heure: e.heure_de_debut}))
-    });
+    var toShow = { display: this.state.isLoading ? "block" : "none" };
     return(
       React.createElement("div", null, 
-        liste
+        React.createElement("h1", {style: toShow}, "Chargement en cours ..."), 
+        this.state.elements
       )
     );
   }
@@ -111,15 +108,19 @@ var AgendakarWidget= React.createClass({
   getInitialState: function(){
     return {
       evenements: [],
-      isLoading: true,
-      url: 'http://www.agendakar.com/api/events.json'
+      isLoading: false,
+      api_url: 'http://localhost:3000/api/events.json'
     }
   },
 
   componentDidMount: function(){
     var self = this;
-    $.get(this.state.url)
-    .done(function(data){ self.setState({ isLoading: false, evenements: data }); })
+    $.ajax({
+      url: this.state.url,
+      dataType: 'json',
+      crossDomain: true,
+    })
+    .done(function(data){ self.setState({ isLoading: true, evenements: data }); })
     .fail(function(){ alert("oups"); });
   },
   render: function(){
@@ -127,15 +128,10 @@ var AgendakarWidget= React.createClass({
       width: '300px',
       height: '330px',
       float: 'right'
-    }
-    toShow = {
-      textAlign: 'center',
-      display: this.state.isLoading ? 'block' : 'none'
     };
     return(
       React.createElement("div", {style: styles}, 
         React.createElement(Header, {titre: "L'agenda cette semaine"}), 
-        React.createElement("h2", {style: toShow}, "Chargement en cours ..."), 
         React.createElement(Liste, {evenements: this.state.evenements}), 
         React.createElement(Footer, null)
       )

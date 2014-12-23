@@ -20,12 +20,12 @@ var Header= React.createClass({
     };
 
     return(
-      <div>
-        <div style={style}>
-          <img src={this.logo_url} style={img_style}/>
-        </div>
-        <h1>{this.props.titre}</h1>
-      </div>
+      React.createElement("div", null, 
+        React.createElement("div", {style: style}, 
+          React.createElement("img", {src: this.logo_url, style: img_style})
+        ), 
+        React.createElement("h1", null, this.props.titre)
+      )
     );
   }
 });
@@ -42,17 +42,17 @@ var Evenement = React.createClass({
     a = { margin:'0px', padding:'0px' };
 
     return(
-      <li>
-        <div>
-        <table style={_style}>
-          <tr>
-            <td>Le {this.props.date}</td>
-            <td>{this.props.heure}</td>
-          </tr>
-          <tr><td colSpan='2'><a href='#' style={a}> {this.props.nom} </a></td></tr>
-        </table>
-        </div>
-      </li>
+      React.createElement("li", null, 
+        React.createElement("div", null, 
+        React.createElement("table", {style: _style}, 
+          React.createElement("tr", null, 
+            React.createElement("td", null, "Le ", this.props.date), 
+            React.createElement("td", null, this.props.heure)
+          ), 
+          React.createElement("tr", null, React.createElement("td", {colSpan: "2"}, React.createElement("a", {href: "#", style: a}, " ", this.props.nom, " ")))
+        )
+        )
+      )
     );
   }
 });
@@ -64,17 +64,17 @@ var Liste= React.createClass({
     var liste;
     liste = [];
     this.props.evenements.map(function(e){
-      liste.push(<Evenement nom={e.nom} date={e.date_de_debut} heure={e.heure_de_debut}/>)
+      liste.push(React.createElement(Evenement, {nom: e.nom, date: e.date_de_debut, heure: e.heure_de_debut}))
     });
     return(
-      <div>
-        {liste}
-      </div>
+      React.createElement("div", null, 
+        liste
+      )
     );
   }
 });
 
-var Footer= React.createClass({
+var Footer= React.createClass({displayName: "Footer",
   render: function(){
     var footer_style = {
       borderTop: '1px solid #DDD'
@@ -93,11 +93,11 @@ var Footer= React.createClass({
       textDecoration: 'none;'
     };
     return(
-      <div style={footer_style}>
-        <a href="http://www.agendakar.com" target="_blank">
-          <h2 style={h2}>aller sur agendakar</h2>
-        </a>
-      </div>
+      React.createElement("div", {style: footer_style}, 
+        React.createElement("a", {href: "http://www.agendakar.com", target: "_blank"}, 
+          React.createElement("h2", {style: h2}, "aller sur agendakar")
+        )
+      )
     );
   }
 });
@@ -111,15 +111,19 @@ var AgendakarWidget= React.createClass({
   getInitialState: function(){
     return {
       evenements: [],
-      isLoading: true,
-      url: 'http://www.agendakar.com/api/events.json'
+      isLoading: false,
+      api_url: 'http://localhost:3000/api/events.json'
     }
   },
 
   componentDidMount: function(){
     var self = this;
-    $.get(this.state.url)
-    .done(function(data){ self.setState({ isLoading: false, evenements: data }); })
+    $.ajax({
+      url: this.state.url,
+      dataType: 'json',
+      crossDomain: true,
+    })
+    .done(function(data){ self.setState({ isLoading: true, evenements: data }); })
     .fail(function(){ alert("oups"); });
   },
   render: function(){
@@ -129,20 +133,19 @@ var AgendakarWidget= React.createClass({
       float: 'right'
     }
     toShow = {
-      textAlign: 'center',
       display: this.state.isLoading ? 'block' : 'none'
     };
     return(
-      <div style={styles}>
-        <Header titre="L'agenda cette semaine"/>
-        <h2 style={toShow}>Chargement en cours ...</h2>
-        <Liste evenements={this.state.evenements}/>
-        <Footer />
-      </div>
+      React.createElement("div", {style: styles}, 
+        React.createElement(Header, {titre: "L'agenda cette semaine"}), 
+        React.createElement("h1", {style: toShow}, "Chargement en cours ..."), 
+        React.createElement(Liste, {evenements: this.state.evenements}), 
+        React.createElement(Footer, null)
+      )
     );
   }
 });
 
 React.render(
-  <AgendakarWidget />, document.getElementById('content')
+  React.createElement(AgendakarWidget, null), document.getElementById('content')
 );
