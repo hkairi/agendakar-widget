@@ -1,17 +1,34 @@
 var React;
 var Header= React.createClass({
-    displayName: "Header",
-    render: function(){
-    return( <div><span><img src="http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png" /></span><h1>Agendakar</h1> </div>);
+  displayName: "Header",
+
+  render: function(){
+    var style = {
+      width: '60px;',
+      height: '60px;',
+      background: '#fff;',
+      'border-radius': '1000px;',
+      display: 'block;',
+      'float': 'left;',
+      margin: '2px;'
+    };
+    return(
+      <div>
+        <div style={style}>
+          <img src="http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png" />
+        </div>
+        <h1>Agendakar</h1>
+      </div>
+    );
   }
 });
 
 var Evenement = React.createClass({
-    displayName: "Evenement",
-    render: function(){
+  displayName: "Evenement",
+  render: function(){
     return(
       <li>
-        <a href='#'> titre </a>
+      <a href='#'> titre </a>
       </li>
     );
   }
@@ -41,7 +58,7 @@ var AgendakarWidget= React.createClass({
 
   loadEvent: function(){
     return(
-      $.get(this.state.url).then(function(data){ return data; });
+      $.get(this.state.url).then(function(data){ return data; })
     );
   },
 
