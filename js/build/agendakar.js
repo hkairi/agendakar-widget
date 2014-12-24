@@ -33,7 +33,7 @@ var Header= React.createClass({
 
 var Evenement = React.createClass({
   displayName : "Evenement",
-  iscollapsed: null,
+  iscollapsed : null,
 
   get_url: function(slug){
     return 'http://www.agendakar.com/agenda/' + slug;
@@ -74,20 +74,27 @@ var Evenement = React.createClass({
     ac = {
       width     : '100%',
       textAlign : 'center'
-    };
+    },
+    _event = this.props.event;
 
     return(
       React.createElement("li", {style: li_style, onClick: this.handleClick}, 
         React.createElement("div", null, 
-        React.createElement("table", {style: _style}, 
-          React.createElement("tr", null, 
-            React.createElement("td", null, "Le ", this.props.date), 
-            React.createElement("td", null, this.props.heure)
-          ), 
-          React.createElement("tr", null, React.createElement("td", {colSpan: "2"}, React.createElement("a", {href: this.get_url(this.props.id), style: a}, " ", this.props.nom, " ")))
+          React.createElement("table", {style: _style}, 
+            React.createElement("tr", null, 
+              React.createElement("td", null, "Le ", _event.date), 
+              React.createElement("td", null, _event.heure)
+            ), 
+            React.createElement("tr", null, 
+              React.createElement("td", {colSpan: "2"}, 
+                React.createElement("a", {href: this.get_url(_event.slug), style: a, target: "_blank"}, _event.nom)
+              )
+           )
           ), 
           React.createElement("p", {style: d}, 
-            React.createElement("a", {href: this.get_url(this.props.id), style: ac}, "Voir sur agendakar.com")
+            React.createElement("a", {href: this.get_url(_event.slug), style: ac, target: "_blank"}, 
+              "Voir sur agendakar.com"
+            )
           )
         )
       )
@@ -106,9 +113,8 @@ var Liste = React.createClass({
     liste = [];
 
     this.props.evenements.map(function(d){
-      var e = d.data;
       liste.push(
-        React.createElement(Evenement, {key: e.id, id: e.slug, nom: e.nom, date: e.date_de_debut, heure: e.heure_de_debut, endroit: e.nom_endroit, quartier: e.quartier})
+        React.createElement(Evenement, {key: d.slug, event: d})
       )
     });
 
@@ -153,13 +159,13 @@ var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
   evenements : [],
   isLoading  : true,
-  url        : 'http://www.agendakar.com/api/events.json',
+  url        : 'http://localhost:3000/api/events.json',
 
   getInitialState: function(){
     return {
       evenements : [],
       isLoading  : true,
-      url        : 'http://www.agendakar.com/api/events.json',
+      url        : 'http://localhost:3000/api/events.json',
     }
   },
 
