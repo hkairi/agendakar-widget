@@ -79,12 +79,16 @@ var Evenement = React.createClass({
     return(
       <li style={li_style} onClick={this.handleClick}>
         <div>
-        <table style={_style}>
-          <tr>
-            <td>Le {this.props.date}</td>
-            <td>{this.props.heure}</td>
-          </tr>
-          <tr><td colSpan='2'><a href={this.get_url(this.props.id)} style={a}> {this.props.nom} </a></td></tr>
+          <table style={_style}>
+            <tr>
+              <td>Le {this.props.date}</td>
+             <td>{this.props.heure}</td>
+            </tr>
+            <tr>
+              <td colSpan='2'>
+                <a href={this.get_url(this.props.id)} style={a} target='_blank'> {this.props.nom} </a>
+              </td>
+           </tr>
           </table>
           <p style={d}>
             <a href={this.get_url(this.props.id)} style={ac}>Voir sur agendakar.com</a>
