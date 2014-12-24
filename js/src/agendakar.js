@@ -57,7 +57,7 @@ var Evenement = React.createClass({
       width    : '100%'
     },
     li_style = {
-      height  : this.state.iscollapsed ? 'auto' : '100px'
+      height  : this.state.iscollapsed ? 'auto' : '125px'
     },
     c = {
       display : this.state.iscollapsed ? 'none' : 'block'
@@ -93,6 +93,11 @@ var Evenement = React.createClass({
                 <a href={this.get_url(_event.slug)} style={a} target='_blank'>{_event.nom}</a>
               </td>
            </tr>
+           <tr style={d}>
+              <td>{_event.endroit}</td>
+              <td style={st}>{_event.quartier}</td>
+            </tr>
+
           </table>
           <p style={d}>
             <a href={this.get_url(_event.slug)} style={ac} target='_blank'>

@@ -57,7 +57,7 @@ var Evenement = React.createClass({
       width    : '100%'
     },
     li_style = {
-      height  : this.state.iscollapsed ? 'auto' : '100px'
+      height  : this.state.iscollapsed ? 'auto' : '125px'
     },
     c = {
       display : this.state.iscollapsed ? 'none' : 'block'
@@ -92,7 +92,12 @@ var Evenement = React.createClass({
               React.createElement("td", {colSpan: "2"}, 
                 React.createElement("a", {href: this.get_url(_event.slug), style: a, target: "_blank"}, _event.nom)
               )
-           )
+           ), 
+           React.createElement("tr", {style: d}, 
+              React.createElement("td", null, _event.endroit), 
+              React.createElement("td", {style: st}, _event.quartier)
+            )
+
           ), 
           React.createElement("p", {style: d}, 
             React.createElement("a", {href: this.get_url(_event.slug), style: ac, target: "_blank"}, 
