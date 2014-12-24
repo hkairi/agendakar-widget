@@ -71,6 +71,9 @@ var Evenement = React.createClass({
       margin  : '0px',
       padding : '0px'
     },
+    st = {
+      textAlign: 'right'
+    },
     ac = {
       width     : '100%',
       textAlign : 'center'
@@ -83,7 +86,7 @@ var Evenement = React.createClass({
           <table style={_style}>
             <tr>
               <td>Le {_event.date}</td>
-              <td>{_event.heure}</td>
+              <td style={st}>{_event.heure}</td>
             </tr>
             <tr>
               <td colSpan='2'>

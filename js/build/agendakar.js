@@ -71,6 +71,9 @@ var Evenement = React.createClass({
       margin  : '0px',
       padding : '0px'
     },
+    st = {
+      textAlign: 'right'
+    },
     ac = {
       width     : '100%',
       textAlign : 'center'
@@ -83,7 +86,7 @@ var Evenement = React.createClass({
           React.createElement("table", {style: _style}, 
             React.createElement("tr", null, 
               React.createElement("td", null, "Le ", _event.date), 
-              React.createElement("td", null, _event.heure)
+              React.createElement("td", {style: st}, _event.heure)
             ), 
             React.createElement("tr", null, 
               React.createElement("td", {colSpan: "2"}, 
@@ -159,13 +162,13 @@ var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
   evenements : [],
   isLoading  : true,
-  url        : 'http://localhost:3000/api/events.json',
+  url        : 'http://www.agendakar.com/api/events.json',
 
   getInitialState: function(){
     return {
       evenements : [],
       isLoading  : true,
-      url        : 'http://localhost:3000/api/events.json',
+      url        : 'http://www.agendakar.com/api/events.json',
     }
   },
 
