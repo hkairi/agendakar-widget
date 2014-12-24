@@ -159,13 +159,13 @@ var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
   evenements : [],
   isLoading  : true,
-  url        : 'http://localhost:3000/api/events.json',
+  url        : 'http://www.agendakar.com/api/events.json',
 
   getInitialState: function(){
     return {
       evenements : [],
       isLoading  : true,
-      url        : 'http://localhost:3000/api/events.json',
+      url        : 'http://www.agendakar.com/api/events.json',
     }
   },
 
