@@ -91,7 +91,7 @@ var Evenement = React.createClass({
            </tr>
           </table>
           <p style={d}>
-            <a href={this.get_url(this.props.id)} style={ac}>Voir sur agendakar.com</a>
+            <a href={this.get_url(this.props.id)} style={ac} target='_blank'>Voir sur agendakar.com</a>
           </p>
         </div>
       </li>
