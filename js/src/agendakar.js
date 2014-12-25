@@ -106,7 +106,8 @@ var Evenement = React.createClass({
           </table>
           <div style={d}>
             <a href={this.get_url(_event.slug)} style={ac} target='_blank'>
-              <i className='fa fa-external-link'></i> plus d'infos sur agendakar.com
+              <i className='fa fa-external-link'></i>
+              plus d'infos sur www.agendakar.com
             </a>
           </div>
         </div>
