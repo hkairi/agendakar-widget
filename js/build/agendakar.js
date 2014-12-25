@@ -51,21 +51,25 @@ var Evenement = React.createClass({
 
   render: function(){
     var _style = {
-      margin   : '0px',
+      width    : '100%',
       padding  : '0px',
-      fontSize : '12px',
-      width    : '100%'
+      margin   : '0',
+      fontSize : '12px'
     },
     li_style = {
-      height  : this.state.iscollapsed ? 'auto' : '125px'
+      color     : '#000',
+      listStyle : 'none',
+      margin    : '2px 0px',
+      border    : '1px solid #A3ABAC',
+      height    : this.state.iscollapsed ? 'auto' : '84px'
     },
     c = {
-      display : this.state.iscollapsed ? 'none' : 'block'
+      display : this.state.iscollapsed ? 'none' : 'block',
     },
     d = {
       display : this.state.iscollapsed ? 'none' : 'block',
-      color   : '#FFF',
-      margin  : 0
+      margin  : 0,
+      width   : '100%'
     },
     a = {
       margin  : '0px',
@@ -90,18 +94,19 @@ var Evenement = React.createClass({
             ), 
             React.createElement("tr", null, 
               React.createElement("td", {colSpan: "2"}, 
-                React.createElement("a", {href: this.get_url(_event.slug), style: a, target: "_blank"}, _event.nom)
+                React.createElement("a", {href: this.get_url(_event.slug), style: a, target: "_blank"}, 
+                  _event.nom
+                )
               )
            ), 
            React.createElement("tr", {style: d}, 
-              React.createElement("td", null, _event.endroit), 
+              React.createElement("td", null, React.createElement(Endroit, {nom: _event.endroit})), 
               React.createElement("td", {style: st}, _event.quartier)
             )
-
           ), 
-          React.createElement("p", {style: d}, 
+          React.createElement("div", {style: d}, 
             React.createElement("a", {href: this.get_url(_event.slug), style: ac, target: "_blank"}, 
-              "Voir sur agendakar.com"
+              React.createElement("i", {className: "fa fa-external-link"}), " plus d'infos sur agendakar.com"
             )
           )
         )
@@ -110,6 +115,17 @@ var Evenement = React.createClass({
   }
 });
 
+var Endroit = React.createClass({displayName: "Endroit",
+  render: function(){
+    var s = { margin : '2px 0', color : '#bd1d2b' },
+        p = { margin : '0', padding : '0' };
+    return(
+      React.createElement("p", {style: p}, 
+        React.createElement("i", {className: "fa fa-map-marker", style: s}), " ",  this.props.nom
+      )
+    )
+  }
+});
 var Liste = React.createClass({
   displayName: 'Agenda',
 
@@ -190,9 +206,10 @@ var AgendakarWidget= React.createClass({
 
   render: function(){
     var styles = {
-      width  : '300px',
-      height : '330px',
-      float  : 'right'
+      fontFamily : "'Dosis', sans-serif",
+      width      : '300px',
+      height     : '330px',
+      float      : 'right'
     },
     toShow = {
       textAlign : 'center',

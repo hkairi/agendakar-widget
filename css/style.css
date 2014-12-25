@@ -1,9 +1,9 @@
-* {font-family: 'Dosis', sans-serif;}
+x {font-family: 'Dosis', sans-serif;}
 * a {text-decoration: none;}
 
 ul { padding:0; margin:0 }
 
-li {
+lli {
     list-style: none;
     margin: 0;
     border-bottom: 1px solid #a3abac;
@@ -22,34 +22,12 @@ li {
     transition: all .3s ease-in-out;
 }
 
-li:last-child {
-    border-bottom: 0px;
-}
-
-li:hover {
-    background: #a3abac;
-    color: #fff;
-}
-
-li:hover a {
-    color: #fff;
-}
-
-.logo {
-    width: 90px;
-    height: 80px;
-    position: relative;
-    left: 0;
-    z-index: 1000;
-}
-
 li a {
     color: #000;
     text-decoration:none;
     font-size:12px;
     width: 100%;
     display: block;
-    padding: 13px;
 }
 
 li a:hover {
