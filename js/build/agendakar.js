@@ -106,7 +106,8 @@ var Evenement = React.createClass({
           ), 
           React.createElement("div", {style: d}, 
             React.createElement("a", {href: this.get_url(_event.slug), style: ac, target: "_blank"}, 
-              React.createElement("i", {className: "fa fa-external-link"}), " plus d'infos sur agendakar.com"
+              React.createElement("i", {className: "fa fa-external-link"}), 
+              "plus d'infos sur www.agendakar.com"
             )
           )
         )
