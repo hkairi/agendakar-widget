@@ -5,6 +5,16 @@ var Header= React.createClass({
   logo_url    : "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png",
 
   render: function(){
+    var h = {
+      fontSize       : '10px;',
+      height         : '65px;',
+      lineHeight     : '65px;',
+      fontWeight     : '100;',
+      textTransform  : 'uppercase;',
+      background     : '#396eb5;',
+      color          : '#fff ;',
+      margin         : '0px !important;'
+    };
     var style = {
       width        : '60px;',
       height       : '60px;',
@@ -21,7 +31,7 @@ var Header= React.createClass({
     };
 
     return(
-      React.createElement("div", null, 
+      React.createElement("div", {style: h}, 
         React.createElement("div", {style: style}, 
           React.createElement("img", {src: this.logo_url, style: img_style})
         ), 
@@ -72,15 +82,17 @@ var Evenement = React.createClass({
       width   : '100%'
     },
     a = {
-      margin  : '0px',
-      padding : '0px'
+      margin         : '0px',
+      padding        : '0px',
+      textDecoration :  'none'
     },
     st = {
       textAlign: 'right'
     },
     ac = {
       width     : '100%',
-      textAlign : 'center'
+      textAlign : 'center',
+      textDecoration :  'none'
     },
     _event = this.props.event;
 
