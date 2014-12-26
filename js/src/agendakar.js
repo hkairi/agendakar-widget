@@ -82,6 +82,7 @@ var Evenement = React.createClass({
       width   : '100%'
     },
     a = {
+      color          : '#000',
       margin         : '0px',
       padding        : '0px',
       textDecoration :  'none'
@@ -90,8 +91,9 @@ var Evenement = React.createClass({
       textAlign: 'right'
     },
     ac = {
-      width     : '100%',
-      textAlign : 'center',
+      color          : '#000',
+      width          : '100%',
+      textAlign      : 'center',
       textDecoration :  'none'
     },
     _event = this.props.event;
