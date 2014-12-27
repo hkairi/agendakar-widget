@@ -66,9 +66,7 @@ var Evenement = React.createClass({
       borderBottom : '1px solid #A3ABAC',
       height       : this.state.iscollapsed ? 'auto' : '105px'
     },
-    c = {
-      display : this.state.iscollapsed ? 'none' : 'block',
-    },
+    c = { display : this.state.iscollapsed ? 'none' : 'block' },
     d = {
       display : this.state.iscollapsed ? 'none' : 'block',
       margin  : '0px auto',
