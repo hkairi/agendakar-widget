@@ -76,7 +76,9 @@ var Evenement = React.createClass({
     },
     e = {
       display : this.state.iscollapsed ? 'none' : 'block',
-      margin  : '0px auto', padding : '0px 30px', width   : '100%'
+      margin  : '6px auto 0 auto',
+      textAlign: 'center',
+      width   : '100%'
     },
     a = {
       color          : '#000',
