@@ -45,41 +45,38 @@ var Evenement = React.createClass({
   displayName : "Evenement",
   iscollapsed : null,
 
-  get_url: function(slug){
-    return 'http://www.agendakar.com/agenda/' + slug;
-  },
+  get_url: function(slug){ return 'http://www.agendakar.com/agenda/' + slug; },
 
-  handleClick: function(){
-    this.setState({ iscollapsed: ! this.state.iscollapsed });
-  },
+  handleClick: function(){ this.setState({ iscollapsed: ! this.state.iscollapsed }); },
 
-  getInitialState: function(){
-    return {
-      iscollapsed: true
-    };
-  },
+  getInitialState: function(){ return { iscollapsed: true }; },
 
   render: function(){
     var _style = {
       width    : '100%',
-      padding  : '0px',
       margin   : '0',
+      cursor   : 'pointer',
+      padding  : '0px',
       fontSize : '12px'
     },
     li_style = {
-      color     : '#000',
-      listStyle : 'none',
-      margin    : '2px 0px',
-      border    : '1px solid #A3ABAC',
-      height    : this.state.iscollapsed ? 'auto' : '84px'
+      color        : '#000',
+      listStyle    : 'none',
+      margin       : '2px 0px',
+      borderBottom : '1px solid #A3ABAC',
+      height       : this.state.iscollapsed ? 'auto' : '105px'
     },
     c = {
       display : this.state.iscollapsed ? 'none' : 'block',
     },
     d = {
       display : this.state.iscollapsed ? 'none' : 'block',
-      margin  : 0,
+      margin  : '0px auto',
       width   : '100%'
+    },
+    e = {
+      display : this.state.iscollapsed ? 'none' : 'block',
+      margin  : '0px auto', padding : '0px 30px', width   : '100%'
     },
     a = {
       color          : '#000',
@@ -87,9 +84,7 @@ var Evenement = React.createClass({
       padding        : '0px',
       textDecoration :  'none'
     },
-    st = {
-      textAlign: 'right'
-    },
+    st = { textAlign: 'right' },
     ac = {
       color          : '#000',
       width          : '100%',
@@ -118,7 +113,7 @@ var Evenement = React.createClass({
               <td style={st}>{_event.quartier}</td>
             </tr>
           </table>
-          <div style={d}>
+          <div style={e}>
             <a href={this.get_url(_event.slug)} style={ac} target='_blank'>
               <i className='fa fa-external-link'></i>
               plus d'infos sur www.agendakar.com
@@ -167,9 +162,8 @@ var Liste = React.createClass({
 
 var Footer= React.createClass({
   render: function(){
-    var footer_style = {
-      borderTop: '1px solid #DDD'
-    },
+    var footer_style = { borderTop: '1px solid #DDD' },
+        a = { textDecoration: 'none' },
     h2 = {
       fontSize       : '16px;',
       textAlign      : 'center;',
@@ -186,7 +180,7 @@ var Footer= React.createClass({
 
     return(
       <div style={footer_style}>
-        <a href="http://www.agendakar.com" target="_blank">
+        <a href="http://www.agendakar.com" target="_blank" style={a}>
           <h2 style={h2}>aller sur agendakar</h2>
         </a>
       </div>
