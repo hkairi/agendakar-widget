@@ -125,6 +125,7 @@ var Evenement = React.createClass({
   }
 });
 
+// Endroit component
 var Endroit = React.createClass({
   render: function(){
     var s = { margin : '2px 0', color : '#bd1d2b' },
@@ -136,6 +137,8 @@ var Endroit = React.createClass({
     )
   }
 });
+
+// Liste Component
 var Liste = React.createClass({
   displayName: 'Agenda',
 
@@ -160,6 +163,7 @@ var Liste = React.createClass({
   }
 });
 
+// Footer component
 var Footer= React.createClass({
   render: function(){
     var footer_style = { borderTop: '1px solid #DDD' },
@@ -206,11 +210,12 @@ var AgendakarWidget= React.createClass({
     var self = this;
     $.get(this.state.url)
     .done(function(data){
-      self.setState({ isLoading: false, evenements: data });
+      self.setState({
+        isLoading  : false,
+        evenements : data
+      });
     })
-    .fail(function(){
-      alert("oups");
-    });
+    .fail(function(){ alert("Erreur de connexion"); });
   },
 
   render: function(){
@@ -220,10 +225,7 @@ var AgendakarWidget= React.createClass({
       height     : '330px',
       float      : 'right'
     },
-    toShow = {
-      textAlign : 'center',
-      display   : this.state.isLoading ? 'block' : 'none'
-    };
+    toShow = { textAlign : 'center', display   : this.state.isLoading ? 'block' : 'none' };
 
     return(
       <div style={styles}>
