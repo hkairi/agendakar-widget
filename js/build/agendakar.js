@@ -66,9 +66,7 @@ var Evenement = React.createClass({
       borderBottom : '1px solid #A3ABAC',
       height       : this.state.iscollapsed ? 'auto' : '105px'
     },
-    c = {
-      display : this.state.iscollapsed ? 'none' : 'block',
-    },
+    c = { display : this.state.iscollapsed ? 'none' : 'block' },
     d = {
       display : this.state.iscollapsed ? 'none' : 'block',
       margin  : '0px auto',
@@ -127,6 +125,7 @@ var Evenement = React.createClass({
   }
 });
 
+// Endroit component
 var Endroit = React.createClass({displayName: "Endroit",
   render: function(){
     var s = { margin : '2px 0', color : '#bd1d2b' },
@@ -138,6 +137,8 @@ var Endroit = React.createClass({displayName: "Endroit",
     )
   }
 });
+
+// Liste Component
 var Liste = React.createClass({
   displayName: 'Agenda',
 
@@ -162,6 +163,7 @@ var Liste = React.createClass({
   }
 });
 
+// Footer component
 var Footer= React.createClass({displayName: "Footer",
   render: function(){
     var footer_style = { borderTop: '1px solid #DDD' },
@@ -200,7 +202,7 @@ var AgendakarWidget= React.createClass({
     return {
       evenements : [],
       isLoading  : true,
-      url        : 'http://www.agendakar.com/api/events.json',
+      url        : 'http://www.agendakar.com/api/events.json'
     }
   },
 
@@ -208,11 +210,12 @@ var AgendakarWidget= React.createClass({
     var self = this;
     $.get(this.state.url)
     .done(function(data){
-      self.setState({ isLoading: false, evenements: data });
+      self.setState({
+        isLoading  : false,
+        evenements : data
+      });
     })
-    .fail(function(){
-      alert("oups");
-    });
+    .fail(function(){ alert("Erreur de connexion"); });
   },
 
   render: function(){
@@ -222,10 +225,7 @@ var AgendakarWidget= React.createClass({
       height     : '330px',
       float      : 'right'
     },
-    toShow = {
-      textAlign : 'center',
-      display   : this.state.isLoading ? 'block' : 'none'
-    };
+    toShow = { textAlign : 'center', display   : this.state.isLoading ? 'block' : 'none' };
 
     return(
       React.createElement("div", {style: styles}, 
