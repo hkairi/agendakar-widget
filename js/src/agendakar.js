@@ -198,7 +198,7 @@ var AgendakarWidget= React.createClass({
     return {
       evenements : [],
       isLoading  : true,
-      url        : 'http://www.agendakar.com/api/events.json',
+      url        : 'http://www.agendakar.com/api/events.json'
     }
   },
 
