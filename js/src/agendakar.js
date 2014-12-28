@@ -24,7 +24,6 @@ var Header= React.createClass({
       float        : 'left;',
       margin       : '2px;'
     };
-
     var img_style = {
       width  : '50px;',
       margin : '6px;'
