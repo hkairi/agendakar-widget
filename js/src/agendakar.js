@@ -32,7 +32,9 @@ var Header= React.createClass({
     return(
       <div style={h}>
         <div style={style}>
-          <img src={this.logo_url} style={img_style}/>
+          <a href='http://www.agendakar.com' target='_blank'>
+            <img src={this.logo_url} style={img_style}/>
+          </a>
         </div>
         <h1>{this.props.titre}</h1>
       </div>

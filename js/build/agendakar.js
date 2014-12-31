@@ -24,7 +24,6 @@ var Header= React.createClass({
       float        : 'left;',
       margin       : '2px;'
     };
-
     var img_style = {
       width  : '50px;',
       margin : '6px;'
@@ -33,7 +32,9 @@ var Header= React.createClass({
     return(
       React.createElement("div", {style: h}, 
         React.createElement("div", {style: style}, 
-          React.createElement("img", {src: this.logo_url, style: img_style})
+          React.createElement("a", {href: "http://www.agendakar.com", target: "_blank"}, 
+            React.createElement("img", {src: this.logo_url, style: img_style})
+          )
         ), 
         React.createElement("h1", null, this.props.titre)
       )
