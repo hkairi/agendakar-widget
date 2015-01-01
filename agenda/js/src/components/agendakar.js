@@ -1,4 +1,3 @@
-var $     = require('jquery'), alert;
 var React = require('react');
 
 var Header = require('./header');
