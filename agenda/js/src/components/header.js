@@ -1,5 +1,3 @@
-var React = require('react');
-
 var Header= React.createClass({
   displayName : "Header",
   logo_url    : "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png",

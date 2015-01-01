@@ -1,5 +1,3 @@
-var React = require('react');
-
 var Endroit = React.createClass({
   render: function(){
     var s = { margin : '2px 0', color : '#bd1d2b' },

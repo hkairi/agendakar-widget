@@ -1,4 +1,3 @@
-var React = require('react');
 var Evenement = require('./evenement');
 
 // Liste Component

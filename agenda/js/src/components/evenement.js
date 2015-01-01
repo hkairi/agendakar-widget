@@ -1,4 +1,3 @@
-var React = require('react');
 var Endroit = require('./endroit');
 
 var Evenement = React.createClass({

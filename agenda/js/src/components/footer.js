@@ -1,5 +1,3 @@
-var React = require('react');
-// Footer component
 var Footer= React.createClass({
   render: function(){
     var footer_style = { borderTop: '1px solid #DDD' },

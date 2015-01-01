@@ -1,5 +1,3 @@
-var React = require('react');
-
 var Header = require('./header');
 var Liste  = require('./liste');
 var Footer = require('./footer');
