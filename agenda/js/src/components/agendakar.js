@@ -4,27 +4,35 @@ var Footer = require('./footer');
 
 var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
-  evenements : [],
-  isLoading  : true,
-  url        : 'http://www.agendakar.com/api/events.json',
 
   getInitialState: function(){
     return {
       evenements : [],
       isLoading  : true,
+      data       : { 'client_id' : this.props.client_id, 'categories' : this.props.categories },
       url        : 'http://www.agendakar.com/api/events.json'
     };
   },
 
+  fetchData: function(){
+    var data =  this.state.data;
+    return(
+      $.ajax({
+        url: this.state.url,
+        data: data,
+        dataType: 'json'
+      })
+    );
+  },
+
   componentDidMount: function(){
-    var self = this;
-    $.get(this.state.url)
+    this.fetchData()
     .done(function(data){
-      self.setState({
+      this.setState({
         isLoading  : false,
         evenements : data
       });
-    })
+    }.bind(this))
     .fail(function(){ alert("Erreur de connexion"); });
   },
 
