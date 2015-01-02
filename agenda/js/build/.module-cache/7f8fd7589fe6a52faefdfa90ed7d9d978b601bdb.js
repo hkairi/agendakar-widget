@@ -1,8 +1,13 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var AgendakarWidget = require('./components/agendakar');
 
+var e   = document.getElementById('agendakar-widget');
+var d   = e.attributes['el'].value;
+var _id = e.attributes['cid'].value;
+var c   = e.attributes['cats'].value.split(",");
+
 React.render(
-  React.createElement(AgendakarWidget, null), document.getElementById('content')
+  React.createElement(AgendakarWidget, {clientId: _id, categories: c}), document.getElementById(d)
 );
 
 },{"./components/agendakar":2}],2:[function(require,module,exports){
@@ -12,27 +17,35 @@ var Footer = require('./footer');
 
 var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
-  evenements : [],
-  isLoading  : true,
-  url        : 'http://www.agendakar.com/api/events.json',
 
   getInitialState: function(){
     return {
       evenements : [],
       isLoading  : true,
+      data       : { 'client_id' : this.props.client_id, 'categories' : this.props.categories },
       url        : 'http://www.agendakar.com/api/events.json'
     };
   },
 
+  fetchData: function(){
+    var data =  this.state.data;
+    return(
+      $.ajax({
+        url: this.state.url,
+        data: data,
+        dataType: 'json'
+      })
+    );
+  },
+
   componentDidMount: function(){
-    var self = this;
-    $.get(this.state.url)
+    this.fetchData()
     .done(function(data){
-      self.setState({
+      this.setState({
         isLoading  : false,
         evenements : data
       });
-    })
+    }.bind(this))
     .fail(function(){ alert("Erreur de connexion"); });
   },
 
