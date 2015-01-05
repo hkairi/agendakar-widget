@@ -4,7 +4,7 @@ var Article = React.createClass({
   render: function(){
     return(
       <article>
-        <h1>{this.props.article.titre}</h1>
+        <h1 className='titre'>{this.props.article.titre}</h1>
       </article>
     );
   }

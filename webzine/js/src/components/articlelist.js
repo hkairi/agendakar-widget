@@ -6,7 +6,7 @@ var ArticleList = React.createClass({
   showArticles: function(){
     return(
       this.props.liste.map(function(art){
-        return(<Article article={art} />);
+        return(<Article article={art} key={art.id}/>);
       })
     );
   },
