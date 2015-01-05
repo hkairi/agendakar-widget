@@ -1,0 +1,12 @@
+var React = require('react');
+
+var WebzinWidget = React.createClass({
+  render: function(){
+    return(
+      <div className='webzine'>
+      </div>
+    );
+  }
+});
+
+module.exports = WebzinWidget;
