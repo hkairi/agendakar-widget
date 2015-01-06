@@ -8,7 +8,7 @@ var WebzineWidget = React.createClass({
   getInitialState: function(){
     return {
       articles: [],
-      url: "http://localhost:3000/api/v1/articles.json"
+      data_url: "http://localhost:3000/api/v1/articles.json"
     };
   },
 
