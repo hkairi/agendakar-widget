@@ -10,7 +10,7 @@ var AgendakarWidget= React.createClass({
       evenements : [],
       isLoading  : true,
       data       : { 'client_id' : this.props.client_id, 'categories' : this.props.categories },
-      url        : 'http://www.agendakar.com/api/events.json'
+      url        : 'http://www.agendakar.com/api/v1/events.json'
     };
   },
 
