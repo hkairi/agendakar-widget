@@ -21,7 +21,7 @@ var WebzineWidget = React.createClass({
   },
 
   componentDidMount: function(){
-    $.getJSON(this.state.url, this.onSuccess, this.onError);
+    $.getJSON(this.state.data_url, this.onSuccess, this.onError);
   },
 
   render: function(){
