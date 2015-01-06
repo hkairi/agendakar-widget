@@ -9,7 +9,7 @@ var WebzineWidget = React.createClass({displayName: "WebzineWidget",
   getInitialState: function(){
     return {
       articles: [],
-      url: "http://localhost:3000/api/v1/articles.json"
+      data_url: "http://www.agendakar.com/api/v1/articles.json"
     };
   },
 
@@ -22,7 +22,7 @@ var WebzineWidget = React.createClass({displayName: "WebzineWidget",
   },
 
   componentDidMount: function(){
-    $.getJSON(this.state.url, this.onSuccess, this.onError);
+    $.getJSON(this.state.data_url, this.onSuccess, this.onError);
   },
 
   render: function(){
