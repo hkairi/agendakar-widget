@@ -53,7 +53,7 @@ var AgendakarWidget= React.createClass({
     var styles = {
       fontFamily : "'Dosis', sans-serif",
       width      : '300px',
-      height     : '330px',
+      maxHeight     : '330px',
       float      : 'right'
     },
     toShow = { textAlign : 'center', display   : this.state.isLoading ? 'block' : 'none' };
