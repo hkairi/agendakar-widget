@@ -62,7 +62,7 @@ var AgendakarWidget= React.createClass({
       React.createElement("div", {style: styles}, 
         React.createElement(Header, {titre: "L'agenda cette semaine"}), 
         React.createElement("h2", {style: toShow}, "Chargement en cours ..."), 
-        React.createElement(Liste, {evenements: this.state.evenements}), 
+        React.createElement(Liste, {evenements: this.state.evenements, clientId: this.props.clientId}), 
         React.createElement(Footer, null)
       )
     );
@@ -93,7 +93,10 @@ var Evenement = React.createClass({
   displayName : "Evenement",
   iscollapsed : null,
 
-  get_url: function(slug){ return 'http://www.agendakar.com/agenda/' + slug; },
+  get_url: function(slug){
+    var id = this.props.clientId;
+    return 'http://www.agendakar.com/agenda/' + slug + '?clientId=' + id;
+  },
 
   handleClick: function(){ this.setState({ iscollapsed: ! this.state.iscollapsed }); },
 
@@ -267,9 +270,9 @@ var Liste = React.createClass({
 
     this.props.evenements.map(function(d){
       liste.push(
-        React.createElement(Evenement, {key: d.slug, event: d})
+        React.createElement(Evenement, {key: d.slug, event: d, clientId: this.props.clientId})
       )
-    });
+    }.bind(this));
 
     return(
       React.createElement("div", {style: l}, 

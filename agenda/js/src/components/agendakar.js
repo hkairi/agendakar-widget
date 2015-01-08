@@ -49,7 +49,7 @@ var AgendakarWidget= React.createClass({
       <div style={styles}>
         <Header titre="L'agenda cette semaine"/>
         <h2 style={toShow}>Chargement en cours ...</h2>
-        <Liste evenements={this.state.evenements}/>
+        <Liste evenements={this.state.evenements} clientId={this.props.clientId}/>
         <Footer />
       </div>
     );

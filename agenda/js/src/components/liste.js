@@ -13,9 +13,9 @@ var Liste = React.createClass({
 
     this.props.evenements.map(function(d){
       liste.push(
-        <Evenement key={d.slug} event={d}/>
+        <Evenement key={d.slug} event={d} clientId={this.props.clientId}/>
       )
-    });
+    }.bind(this));
 
     return(
       <div style={l}>

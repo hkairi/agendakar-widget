@@ -4,7 +4,10 @@ var Evenement = React.createClass({
   displayName : "Evenement",
   iscollapsed : null,
 
-  get_url: function(slug){ return 'http://www.agendakar.com/agenda/' + slug; },
+  get_url: function(slug){
+    var id = this.props.clientId;
+    return 'http://www.agendakar.com/agenda/' + slug + '?clientId=' + id;
+  },
 
   handleClick: function(){ this.setState({ iscollapsed: ! this.state.iscollapsed }); },
 
