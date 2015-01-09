@@ -10,18 +10,32 @@ function loadScript(url, callback) {
   head.appendChild(script);
 }
 
+function load_police(url){
+  var h = document.getElementsByTagName('head')[0],
+      d = document.createElement('link');
+  d.type= 'text/css';
+  d.rel ='stylesheet';
+  d.href= url;
+  h.appendChild(d);
+}
+
+function loadPolices(){
+  load_police("http://fonts.googleapis.com/css?family=Dosis");
+  load_police("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+}
+
 function start(){
   var AgendakarWidget = require('./components/agendakar');
   var e   = document.getElementById('agendakar-widget');
   var d   = e.attributes['data-el'].value;
   var _id = e.attributes['data-cid'].value;
-  var c   = e.attributes['data-cats'].value.split(",");
 
   React.render(
-    <AgendakarWidget clientId={_id} categories={c}/>, document.getElementById(d)
+    <AgendakarWidget clientId={_id}/>, document.getElementById(d)
   );
 }
 
+loadPolices();
 function load_react(){
   loadScript("https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js", start);
 }
