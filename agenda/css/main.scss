@@ -1,0 +1,83 @@
+div#agd-widget{
+  width: 300px !important;
+  border: 1px solid #A3ABAC;
+  height:400px;
+  overflow: hidden;
+  font-family: 'Dosis';
+
+  a{ text-decoration: none; }
+
+  div#agd-header{
+    height: 65px !important;
+    background: #396eb5;
+    div#agd-logo{
+      width: 56px;
+      float: left;
+      height: 65px;
+      a{
+        img{
+          width: 53px;
+          height: 53px;
+          padding: 5px;
+          border-radius: 1000px;
+          background:#FFF;
+        }
+      }
+    }
+    h1#agd-txt{
+      width: 237px;
+      float: right;
+      color: #FFF;
+      font-size: 21px;
+      text-transform: uppercase;
+    }
+  }
+  div#agd-special{
+    height: 296px;
+    &.hidden{ display: none }
+    i{
+      color: red;
+      float: right;
+      z-index: 9999;
+      padding: 3px;
+      margin: 3px;
+    }
+  }
+  div#agd-liste{
+    height: 294px;
+    width: 280px;
+    margin: 2px auto;
+    overflow: auto;
+    li{
+      font-size: 14px;
+      list-style: none;
+      height: 39px;
+      padding:3px 0;
+      border-bottom: 1px solid #A3ABAC;
+      overflow: hidden;
+      a{ color: #000; }
+      &:hover{
+        cursor: pointer;
+        color:#396eb5;
+        a{
+          color: #396eb5;
+        }
+      }
+    }
+  }
+  div#agd-footer{
+    height: 41px;
+    color:#FFF;
+    background: #396eb5;
+    text-transform: uppercase;
+    text-align: center;
+    h2{
+      margin:0;
+      padding-top:3px;
+    }
+    a{
+      color:#FFF;
+      margin-top: 3px;
+    }
+  }
+}

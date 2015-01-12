@@ -1,16 +1,20 @@
 var Header = require('./header');
 var Liste  = require('./liste');
 var Footer = require('./footer');
+var Special= require('./special');
 
 var AgendakarWidget= React.createClass({
   displayName: 'agendakar-widget',
 
   getInitialState: function(){
     return {
-      evenements : [],
-      isLoading  : true,
+      url        : 'http://www.agendakar.com/api/v1/events.json',
+      show       : false,
+      item       : null,
       data       : { 'client_id' : this.props.client_id },
-      url        : 'http://www.agendakar.com/api/v1/events.json'
+      selected   : false,
+      isLoading  : true,
+      evenements : []
     };
   },
 
@@ -30,26 +34,39 @@ var AgendakarWidget= React.createClass({
     .done(function(data){
       this.setState({
         isLoading  : false,
+        show       : false,
+        item       : null,
         evenements : data
       });
     }.bind(this))
-    .fail(function(){ alert("Erreur de connexion"); });
+    .fail(function(){ alert("Erreur"); });
+  },
+
+  onEvenementClick: function(index){
+    this.setState({
+      show    : true,
+      item    : this.state.evenements[index]
+    });
   },
 
   render: function(){
-    var styles = {
-      fontFamily : "'Dosis', sans-serif",
-      width      : '300px',
-      maxHeight     : '330px',
-      float      : 'right'
-    },
-    toShow = { textAlign : 'center', display   : this.state.isLoading ? 'block' : 'none' };
+    var toShow = {
+      textAlign : 'center',
+      display   : this.state.isLoading ? 'block' : 'none'
+    };
 
     return(
-      <div style={styles}>
-        <Header titre="L'agenda cette semaine"/>
+      <div id='agd-widget'>
+        <Header titre="cette semaine a Dakar"/>
         <h2 style={toShow}>Chargement en cours ...</h2>
-        <Liste evenements={this.state.evenements} clientId={this.props.clientId}/>
+
+        <Special item = {this.state.item} show = {this.state.show} />
+
+        { this.state.show ? null :
+        <Liste evenements       = {this.state.evenements}
+               clientId         = {this.props.clientId}
+               onEvenementClick = {this.onEvenementClick}/>
+        }
         <Footer />
       </div>
     );

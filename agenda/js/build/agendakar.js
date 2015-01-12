@@ -249,18 +249,18 @@ var Header= React.createClass({
 
   render: function(){
     var h = {
-      fontSize       : '10px;',
-      height         : '65px;',
-      lineHeight     : '65px;',
+      fontSize       : '10px !important;',
+      height         : '65px !important;',
+      lineHeight     : '65px !important;',
       fontWeight     : '100;',
       textTransform  : 'uppercase;',
-      background     : '#396eb5;',
-      color          : '#fff ;',
+      background     : '#396eb5 !important;',
+      color          : '#fff !important;',
       margin         : '0px !important;'
     };
     var style = {
-      width        : '60px;',
-      height       : '60px;',
+      width        : '60px !important;',
+      height       : '60px !important;',
       background   : '#fff;',
       borderRadius : '1000px;',
       display      : 'block;',

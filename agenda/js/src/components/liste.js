@@ -1,24 +1,37 @@
 var Evenement = require('./evenement');
-
 // Liste Component
 var Liste = React.createClass({
   displayName: 'Agenda',
 
-  render: function(){
-    var l = {
-      height   : '230px',
-      overflow : 'auto'
-    },
-    liste = [];
+  onClick: function(index){
+    this.props.onEvenementClick(index);
+  },
 
-    this.props.evenements.map(function(d){
+  getInitialState: function(){
+    return {
+      selected: false,
+      show    : false,
+      item    : null
+    };
+  },
+
+  render: function(){
+    var liste   = [];
+    var _events = this.props.evenements;
+
+    _events.map(function(d){
+      var _i =  _events.indexOf(d);
       liste.push(
-        <Evenement key={d.slug} event={d} clientId={this.props.clientId}/>
+        <Evenement key={d.slug}
+                   event={d}
+                   index= {_i}
+                   clientId={this.props.clientId}
+                   onClick={this.onClick}/>
       )
     }.bind(this));
 
     return(
-      <div style={l}>
+      <div id='agd-liste'>
         {liste}
       </div>
     );

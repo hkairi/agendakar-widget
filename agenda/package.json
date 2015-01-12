@@ -13,7 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browserify -t reactify js/src/agendakar.js -o js/build/agendakar.js"
+    "start": "browserify -t reactify js/src/agendakar.js -o js/build/agenda.js"
   },
   "repository": {
     "type": "git",

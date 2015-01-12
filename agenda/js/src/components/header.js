@@ -3,38 +3,14 @@ var Header= React.createClass({
   logo_url    : "http://agendakar.com/assets/logo-327ec88839272b08eb7b40fe82d636de.png",
 
   render: function(){
-    var h = {
-      fontSize       : '10px !important;',
-      height         : '65px !important;',
-      lineHeight     : '65px !important;',
-      fontWeight     : '100;',
-      textTransform  : 'uppercase;',
-      background     : '#396eb5 !important;',
-      color          : '#fff !important;',
-      margin         : '0px !important;'
-    };
-    var style = {
-      width        : '60px !important;',
-      height       : '60px !important;',
-      background   : '#fff;',
-      borderRadius : '1000px;',
-      display      : 'block;',
-      float        : 'left;',
-      margin       : '2px;'
-    };
-    var img_style = {
-      width  : '50px;',
-      margin : '6px;'
-    };
-
     return(
-      <div style={h}>
-        <div style={style}>
+      <div id='agd-header'>
+        <div id='agd-logo'>
           <a href='http://www.agendakar.com' target='_blank'>
-            <img src={this.logo_url} style={img_style}/>
+            <img src={this.logo_url} title='www.agendakar.com' alt='www.agendakar.com'/>
           </a>
         </div>
-        <h1>{this.props.titre}</h1>
+        <h1 id='agd-txt'>{this.props.titre}</h1>
       </div>
     );
   }
