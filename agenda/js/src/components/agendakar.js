@@ -67,13 +67,13 @@ var AgendakarWidget= React.createClass({
         <Header titre="cette semaine a Dakar"/>
         <h2 style={toShow}>Chargement en cours ...</h2>
 
-        <Special item    = {this.state.item}
-                 show    = {this.state.show}
-                 onClose = {this.onSpecialClose}/>
+        <Special item     = {this.state.item}
+                 show     = {this.state.show}
+                 clientId = {this.props.clientId}
+                 onClose  = {this.onSpecialClose}/>
 
         { this.state.show ? null :
         <Liste evenements       = {this.state.evenements}
-               clientId         = {this.props.clientId}
                onEvenementClick = {this.onEvenementClick}/>
         }
         <Footer />

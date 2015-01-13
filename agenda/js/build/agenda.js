@@ -4,6 +4,7 @@ function loadScript(url, callback) {
   var script  = document.createElement('script');
   script.type = 'text/javascript';
   script.src  = url;
+  script.async= 1;
 
   script.onreadystatechange = callback;
   script.onload = callback;
@@ -21,7 +22,7 @@ function load_police(url){
 }
 
 function loadPolices(){
-  load_police("css/main.css");
+  load_police("css/main.min.css");
   load_police("http://fonts.googleapis.com/css?family=Dosis");
   load_police("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 }
@@ -116,11 +117,11 @@ var AgendakarWidget= React.createClass({
 
         React.createElement(Special, {item: this.state.item, 
                  show: this.state.show, 
+                 clientId: this.props.clientId, 
                  onClose: this.onSpecialClose}), 
 
          this.state.show ? null :
         React.createElement(Liste, {evenements: this.state.evenements, 
-               clientId: this.props.clientId, 
                onEvenementClick: this.onEvenementClick}), 
         
         React.createElement(Footer, null)
@@ -179,7 +180,7 @@ var Evenement = React.createClass({
               )
             ), 
             React.createElement("tr", null, 
-              React.createElement("td", null, " ", _event.nom, " ")
+              React.createElement("td", null, _event.nom)
            )
            )
         )
@@ -273,7 +274,10 @@ module.exports = Liste;
 var Special = React.createClass({displayName: "Special",
 
   get_url: function(){
-    return( "http://www.agendakar.com/agenda/" + this.props.item.slug );
+    var link = "http://www.agendakar.com/agenda/" + this.props.item.slug;
+        link+= "?clientId=" + this.props.clientId;
+
+    return link;
   },
 
   render: function(){
@@ -298,6 +302,9 @@ var Special = React.createClass({displayName: "Special",
               React.createElement("tr", null, 
                 React.createElement("td", null, _item.date), 
                 React.createElement("td", {className: "heure"}, _item.heure)
+              ), 
+              React.createElement("tr", null, 
+                React.createElement("td", {colSpan: "2"}, _item.endroit)
               )
             )
           ), 

@@ -1,7 +1,10 @@
 var Special = React.createClass({
 
   get_url: function(){
-    return( "http://www.agendakar.com/agenda/" + this.props.item.slug );
+    var link = "http://www.agendakar.com/agenda/" + this.props.item.slug;
+        link+= "?clientId=" + this.props.clientId;
+
+    return link;
   },
 
   render: function(){
@@ -26,6 +29,9 @@ var Special = React.createClass({
               <tr>
                 <td>{_item.date}</td>
                 <td className='heure'>{_item.heure}</td>
+              </tr>
+              <tr>
+                <td colSpan='2'>{_item.endroit}</td>
               </tr>
             </table>
           </div>

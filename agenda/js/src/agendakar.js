@@ -3,6 +3,7 @@ function loadScript(url, callback) {
   var script  = document.createElement('script');
   script.type = 'text/javascript';
   script.src  = url;
+  script.async= 1;
 
   script.onreadystatechange = callback;
   script.onload = callback;
@@ -20,7 +21,7 @@ function load_police(url){
 }
 
 function loadPolices(){
-  load_police("css/main.css");
+  load_police("css/main.min.css");
   load_police("http://fonts.googleapis.com/css?family=Dosis");
   load_police("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 }
