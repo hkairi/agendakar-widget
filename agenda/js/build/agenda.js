@@ -96,6 +96,13 @@ var AgendakarWidget= React.createClass({
     });
   },
 
+  onSpecialClose: function(){
+    this.setState({
+      show : false,
+      item : null
+    });
+  },
+
   render: function(){
     var toShow = {
       textAlign : 'center',
@@ -107,7 +114,9 @@ var AgendakarWidget= React.createClass({
         React.createElement(Header, {titre: "cette semaine a Dakar"}), 
         React.createElement("h2", {style: toShow}, "Chargement en cours ..."), 
 
-        React.createElement(Special, {item: this.state.item, show: this.state.show}), 
+        React.createElement(Special, {item: this.state.item, 
+                 show: this.state.show, 
+                 onClose: this.onSpecialClose}), 
 
          this.state.show ? null :
         React.createElement(Liste, {evenements: this.state.evenements, 
@@ -162,11 +171,15 @@ var Evenement = React.createClass({
         React.createElement("div", null, 
           React.createElement("table", {className: "evenement"}, 
             React.createElement("tr", null, 
-              React.createElement("td", {className: "date"}, "Le ", _event.date), 
-              React.createElement("td", {className: "heure"}, _event.heure)
+            React.createElement("td", null, 
+              React.createElement("div", {className: "dateheure"}, 
+                React.createElement("div", {className: "date"}, "Le ", _event.date), 
+                React.createElement("div", {className: "heure"}, _event.heure)
+              )
+              )
             ), 
             React.createElement("tr", null, 
-              React.createElement("td", {colSpan: "2"}, 
+              React.createElement("td", null, 
                 React.createElement("a", {href: this.get_url(_event.slug), target: "_blank"}, 
                   _event.nom
                 )
@@ -262,20 +275,44 @@ module.exports = Liste;
 
 },{"./evenement":4}],8:[function(require,module,exports){
 var Special = React.createClass({displayName: "Special",
-  getDefaultProps: function(){
-    return({
-      item: {
-        nom: ''
-      }
-    });
+
+  get_url: function(){
+    return( "http://www.agendakar.com/agenda/" + this.props.item.slug );
   },
+
   render: function(){
-    var classes = this.props.show ? '' : 'hidden';
+    var classes = this.props.show ? '' : 'hidden',
+        _item   = this.props.item;
     return(
-      this.props.item ?
+      _item ?
       React.createElement("div", {className: classes, id: "agd-special"}, 
-        React.createElement("i", {className: "fa fa-remove"}), 
-        this.props.item.nom
+        React.createElement("div", {id: "s-header"}, 
+          React.createElement("div", {id: "date"}
+          ), 
+          React.createElement("div", {id: "close"}, 
+            React.createElement("i", {className: "fa fa-remove", onClick: this.props.onClose})
+          )
+        ), 
+        React.createElement("div", {id: "content"}, 
+          React.createElement("div", {className: "titre"}, " ", _item.nom, " "), 
+          React.createElement("div", {id: "image"}, 
+            React.createElement("img", {src: "http://www.agendakar.com/system/evenements/photos/000/001/258/android/1399579_478340228970536_1206969411209848894_o.jpg"}), 
+            React.createElement("br", null), 
+
+            React.createElement("table", null, 
+              React.createElement("tr", null, 
+                React.createElement("td", null, _item.date), 
+                React.createElement("td", {className: "heure"}, _item.heure)
+              )
+            )
+          ), 
+          React.createElement("div", {id: "extra"}, 
+            React.createElement("a", {href: this.get_url(), target: "_blank"}, 
+              React.createElement("i", {className: "fa fa-external-link"}), 
+              "plus d'infos sur www.agenakar.com"
+            )
+          )
+        )
       )
       : null
     );

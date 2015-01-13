@@ -49,6 +49,13 @@ var AgendakarWidget= React.createClass({
     });
   },
 
+  onSpecialClose: function(){
+    this.setState({
+      show : false,
+      item : null
+    });
+  },
+
   render: function(){
     var toShow = {
       textAlign : 'center',
@@ -60,7 +67,9 @@ var AgendakarWidget= React.createClass({
         <Header titre="cette semaine a Dakar"/>
         <h2 style={toShow}>Chargement en cours ...</h2>
 
-        <Special item = {this.state.item} show = {this.state.show} />
+        <Special item    = {this.state.item}
+                 show    = {this.state.show}
+                 onClose = {this.onSpecialClose}/>
 
         { this.state.show ? null :
         <Liste evenements       = {this.state.evenements}
