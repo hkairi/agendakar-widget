@@ -24,11 +24,15 @@ var Evenement = React.createClass({
         <div>
           <table className='evenement'>
             <tr>
-              <td className='date'>Le {_event.date}</td>
-              <td className='heure'>{_event.heure}</td>
+            <td>
+              <div className='dateheure'>
+                <div className='date'>Le {_event.date}</div>
+                <div className='heure'>{_event.heure}</div>
+              </div>
+              </td>
             </tr>
             <tr>
-              <td colSpan='2'>
+              <td>
                 <a href={this.get_url(_event.slug)} target='_blank'>
                   {_event.nom}
                 </a>
