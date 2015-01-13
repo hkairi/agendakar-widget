@@ -29,12 +29,46 @@ div#agd-widget {
     height: 296px; }
     div#agd-widget div#agd-special.hidden {
       display: none; }
-    div#agd-widget div#agd-special i {
-      color: red;
-      float: right;
-      z-index: 9999;
-      padding: 3px;
-      margin: 3px; }
+    div#agd-widget div#agd-special div#s-header {
+      border-bottom: 1px solid #A3ABAC;
+      height: 39px;
+      width: 290px;
+      margin: 0px auto; }
+      div#agd-widget div#agd-special div#s-header div#date {
+        float: left;
+        width: 260px; }
+      div#agd-widget div#agd-special div#s-header div#close {
+        width: 15px;
+        float: right; }
+        div#agd-widget div#agd-special div#s-header div#close i {
+          color: #396eb5;
+          float: right;
+          border: 2px solid #396eb5;
+          border-radius: 20px;
+          z-index: 9999;
+          padding: 3px;
+          margin: 8px;
+          cursor: pointer; }
+    div#agd-widget div#agd-special div#content {
+      width: 290px;
+      margin: 2px auto; }
+      div#agd-widget div#agd-special div#content div.titre {
+        text-align: center; }
+      div#agd-widget div#agd-special div#content div#image {
+        width: 286px;
+        margin: 2px; }
+        div#agd-widget div#agd-special div#content div#image img, div#agd-widget div#agd-special div#content div#image table {
+          width: 100%; }
+        div#agd-widget div#agd-special div#content div#image td.heure {
+          text-align: right; }
+      div#agd-widget div#agd-special div#content div#extra {
+        width: 100%;
+        text-align: center;
+        margin: 15px 0 0 0; }
+        div#agd-widget div#agd-special div#content div#extra a {
+          color: #FFF;
+          background: #A3ABAC;
+          padding: 3px 8px; }
   div#agd-widget div#agd-liste {
     height: 294px;
     width: 280px;
@@ -54,6 +88,16 @@ div#agd-widget {
         color: #396eb5; }
         div#agd-widget div#agd-liste li:hover a {
           color: #396eb5; }
+      div#agd-widget div#agd-liste li table {
+        width: 100%; }
+        div#agd-widget div#agd-liste li table tr td div.date {
+          float: left;
+          text-align: left;
+          width: 48%; }
+        div#agd-widget div#agd-liste li table tr td div.heure {
+          float: right;
+          text-align: right;
+          width: 48%; }
   div#agd-widget div#agd-footer {
     height: 41px;
     color: #FFF;
