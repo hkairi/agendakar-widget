@@ -31,7 +31,7 @@ div#agd-widget {
       display: none; }
     div#agd-widget div#agd-special div#s-header {
       border-bottom: 1px solid #A3ABAC;
-      height: 39px;
+      height: 34px;
       width: 290px;
       margin: 0px auto; }
       div#agd-widget div#agd-special div#s-header div#date {
@@ -48,23 +48,28 @@ div#agd-widget {
           z-index: 9999;
           padding: 3px;
           margin: 8px;
-          cursor: pointer; }
+          cursor: pointer;
+          font-size: small; }
     div#agd-widget div#agd-special div#content {
       width: 290px;
       margin: 2px auto; }
       div#agd-widget div#agd-special div#content div.titre {
         text-align: center; }
       div#agd-widget div#agd-special div#content div#image {
-        width: 286px;
-        margin: 2px; }
+        width: 282px;
+        margin: 2px;
+        font-size: small; }
         div#agd-widget div#agd-special div#content div#image img, div#agd-widget div#agd-special div#content div#image table {
           width: 100%; }
+        div#agd-widget div#agd-special div#content div#image img {
+          border: 1px solid #EEE;
+          padding: 1px; }
         div#agd-widget div#agd-special div#content div#image td.heure {
           text-align: right; }
       div#agd-widget div#agd-special div#content div#extra {
         width: 100%;
         text-align: center;
-        margin: 15px 0 0 0; }
+        margin: 5px 0 0 0; }
         div#agd-widget div#agd-special div#content div#extra a {
           color: #FFF;
           background: #A3ABAC;
