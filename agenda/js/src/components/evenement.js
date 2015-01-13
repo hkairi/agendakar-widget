@@ -32,11 +32,7 @@ var Evenement = React.createClass({
               </td>
             </tr>
             <tr>
-              <td>
-                <a href={this.get_url(_event.slug)} target='_blank'>
-                  {_event.nom}
-                </a>
-              </td>
+              <td>{_event.nom}</td>
            </tr>
            </table>
         </div>

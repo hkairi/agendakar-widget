@@ -20,9 +20,8 @@ var Special = React.createClass({
         <div id='content'>
           <div className="titre"> {_item.nom} </div>
           <div id='image'>
-            <img src='http://www.agendakar.com/system/evenements/photos/000/001/258/android/1399579_478340228970536_1206969411209848894_o.jpg' />
+            <img src={_item.photo_url} alt={_item.nom} title={_item.nom} />
             <br />
-
             <table>
               <tr>
                 <td>{_item.date}</td>

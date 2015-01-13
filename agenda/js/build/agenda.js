@@ -179,11 +179,7 @@ var Evenement = React.createClass({
               )
             ), 
             React.createElement("tr", null, 
-              React.createElement("td", null, 
-                React.createElement("a", {href: this.get_url(_event.slug), target: "_blank"}, 
-                  _event.nom
-                )
-              )
+              React.createElement("td", null, " ", _event.nom, " ")
            )
            )
         )
@@ -296,9 +292,8 @@ var Special = React.createClass({displayName: "Special",
         React.createElement("div", {id: "content"}, 
           React.createElement("div", {className: "titre"}, " ", _item.nom, " "), 
           React.createElement("div", {id: "image"}, 
-            React.createElement("img", {src: "http://www.agendakar.com/system/evenements/photos/000/001/258/android/1399579_478340228970536_1206969411209848894_o.jpg"}), 
+            React.createElement("img", {src: _item.photo_url, alt: _item.nom, title: _item.nom}), 
             React.createElement("br", null), 
-
             React.createElement("table", null, 
               React.createElement("tr", null, 
                 React.createElement("td", null, _item.date), 
