@@ -41,15 +41,15 @@ div#webzine-widget {
         width: 15px;
         float: right; }
         div#webzine-widget div#webzine-special div#s-header div#close i {
-          color: #396eb5;
+          color: #fcbb59;
           float: right;
-          border: 2px solid #396eb5;
-          border-radius: 20px;
-          z-index: 9999;
-          padding: 3px;
+          border: 2px solid #fcbb59;
           margin: 8px;
           cursor: pointer;
-          font-size: small; }
+          padding: 3px;
+          z-index: 9999;
+          font-size: small;
+          border-radius: 20px; }
     div#webzine-widget div#webzine-special div#content {
       width: 290px;
       margin: 2px auto; }
@@ -74,6 +74,9 @@ div#webzine-widget {
           color: #FFF;
           background: #A3ABAC;
           padding: 3px 8px; }
+          div#webzine-widget div#webzine-special div#content div#extra a i {
+            margin: 5px;
+            font-size: small; }
   div#webzine-widget div#webzine-liste {
     height: 294px;
     width: 280px;

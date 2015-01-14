@@ -48,15 +48,15 @@ div#webzine-widget{
         width: 15px;
         float: right;
         i{
-          color: #396eb5;
+          color: #fcbb59;
           float: right;
-          border: 2px solid #396eb5;
-          border-radius: 20px;
-          z-index: 9999;
-          padding: 3px;
+          border: 2px solid #fcbb59;
           margin: 8px;
           cursor: pointer;
+          padding: 3px;
+          z-index: 9999;
           font-size: small;
+          border-radius: 20px;
         }
       }
     }
@@ -80,6 +80,7 @@ div#webzine-widget{
           color: #FFF;
           background: #A3ABAC;
           padding:3px 8px;
+          i{ margin: 5px; font-size: small }
         }
       }
     }
