@@ -1,0 +1,117 @@
+div#webzine-widget {
+  width: 300px !important;
+  border: 1px solid #A3ABAC;
+  height: 400px;
+  overflow: hidden;
+  font-family: 'Dosis'; }
+  div#webzine-widget a {
+    text-decoration: none; }
+  div#webzine-widget div#webzine-header {
+    height: 65px !important;
+    background: #fcbb59; }
+    div#webzine-widget div#webzine-header div#webzine-logo {
+      width: 56px;
+      float: left;
+      height: 65px; }
+      div#webzine-widget div#webzine-header div#webzine-logo a img {
+        width: 53px;
+        height: 53px;
+        padding: 5px;
+        border-radius: 1000px;
+        background: #FFF; }
+    div#webzine-widget div#webzine-header h1#webzine-txt {
+      width: 226px;
+      float: right;
+      color: #FFF;
+      font-size: 25px;
+      text-transform: uppercase; }
+  div#webzine-widget div#webzine-special {
+    height: 296px; }
+    div#webzine-widget div#webzine-special.hidden {
+      display: none; }
+    div#webzine-widget div#webzine-special div#s-header {
+      border-bottom: 1px solid #A3ABAC;
+      height: 34px;
+      width: 290px;
+      margin: 0px auto; }
+      div#webzine-widget div#webzine-special div#s-header div#date {
+        float: left;
+        width: 260px; }
+      div#webzine-widget div#webzine-special div#s-header div#close {
+        width: 15px;
+        float: right; }
+        div#webzine-widget div#webzine-special div#s-header div#close i {
+          color: #396eb5;
+          float: right;
+          border: 2px solid #396eb5;
+          border-radius: 20px;
+          z-index: 9999;
+          padding: 3px;
+          margin: 8px;
+          cursor: pointer;
+          font-size: small; }
+    div#webzine-widget div#webzine-special div#content {
+      width: 290px;
+      margin: 2px auto; }
+      div#webzine-widget div#webzine-special div#content div.titre {
+        text-align: center; }
+      div#webzine-widget div#webzine-special div#content div#image {
+        width: 282px;
+        margin: 2px;
+        font-size: small; }
+        div#webzine-widget div#webzine-special div#content div#image img, div#webzine-widget div#webzine-special div#content div#image table {
+          width: 100%; }
+        div#webzine-widget div#webzine-special div#content div#image img {
+          border: 1px solid #EEE;
+          padding: 1px; }
+        div#webzine-widget div#webzine-special div#content div#image td.heure {
+          text-align: right; }
+      div#webzine-widget div#webzine-special div#content div#extra {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0 0 0; }
+        div#webzine-widget div#webzine-special div#content div#extra a {
+          color: #FFF;
+          background: #A3ABAC;
+          padding: 3px 8px; }
+  div#webzine-widget div#webzine-liste {
+    height: 294px;
+    width: 280px;
+    margin: 2px auto;
+    overflow: auto; }
+    div#webzine-widget div#webzine-liste li {
+      font-size: 14px;
+      list-style: none;
+      height: 39px;
+      padding: 3px 0;
+      border-bottom: 1px solid #A3ABAC;
+      overflow: hidden; }
+      div#webzine-widget div#webzine-liste li a {
+        color: #000; }
+      div#webzine-widget div#webzine-liste li:hover {
+        cursor: pointer;
+        color: #fcbb59; }
+        div#webzine-widget div#webzine-liste li:hover a {
+          color: #fcbb59; }
+      div#webzine-widget div#webzine-liste li table {
+        width: 100%; }
+        div#webzine-widget div#webzine-liste li table tr td div.date {
+          float: left;
+          text-align: left;
+          width: 48%; }
+        div#webzine-widget div#webzine-liste li table tr td div.heure {
+          float: right;
+          text-align: right;
+          width: 48%; }
+  div#webzine-widget div#webzine-footer {
+    height: 41px;
+    color: #FFF;
+    background: #fcbb59;
+    text-transform: uppercase;
+    text-align: center; }
+    div#webzine-widget div#webzine-footer h2 {
+      margin: 0;
+      padding-top: 3px; }
+    div#webzine-widget div#webzine-footer a {
+      color: #FFF;
+      margin-top: 3px; }

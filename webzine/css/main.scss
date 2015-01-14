@@ -1,0 +1,126 @@
+div#webzine-widget{
+  width: 300px !important;
+  border: 1px solid #A3ABAC;
+  height:400px;
+  overflow: hidden;
+  font-family: 'Dosis';
+
+  a{ text-decoration: none; }
+
+  div#webzine-header{
+    height: 65px !important;
+    background: #fcbb59;
+    div#webzine-logo{
+      width: 56px;
+      float: left;
+      height: 65px;
+      a{
+        img{
+          width: 53px;
+          height: 53px;
+          padding: 5px;
+          border-radius: 1000px;
+          background:#FFF;
+        }
+      }
+    }
+    h1#webzine-txt{
+      width: 226px;
+      float: right;
+      color: #FFF;
+      font-size: 25px;
+      text-transform: uppercase;
+    }
+  }
+  div#webzine-special{
+    height: 296px;
+    &.hidden{ display: none }
+    div#s-header{
+      border-bottom: 1px solid #A3ABAC;
+      height: 34px;
+      width: 290px;
+      margin: 0px auto;
+      div#date{
+        float: left;
+        width: 260px;
+      }
+      div#close{
+        width: 15px;
+        float: right;
+        i{
+          color: #396eb5;
+          float: right;
+          border: 2px solid #396eb5;
+          border-radius: 20px;
+          z-index: 9999;
+          padding: 3px;
+          margin: 8px;
+          cursor: pointer;
+          font-size: small;
+        }
+      }
+    }
+    div#content{
+      width: 290px;
+      margin: 2px auto;
+      div.titre{ text-align: center; }
+      div#image{
+        width:282px;
+        margin:2px;
+        img, table{ width: 100%; }
+        img{border:1px solid #EEE; padding: 1px}
+        font-size: small;
+        td.heure{ text-align: right }
+      }
+      div#extra{
+        width: 100%;
+        text-align: center;
+        margin: 5px 0 0 0;
+        a{
+          color: #FFF;
+          background: #A3ABAC;
+          padding:3px 8px;
+        }
+      }
+    }
+  }
+  div#webzine-liste{
+    height: 294px;
+    width: 280px;
+    margin: 2px auto;
+    overflow: auto;
+    li{
+      font-size: 14px;
+      list-style: none;
+      height: 39px;
+      padding:3px 0;
+      border-bottom: 1px solid #A3ABAC;
+      overflow: hidden;
+      a{ color: #000; }
+      &:hover{
+        cursor: pointer;
+        color:#fcbb59;
+        a{ color: #fcbb59; }
+      }
+      table{
+        width:100%;
+        tr{
+          td{
+              div.date { float:left;  text-align: left;  width: 48% }
+              div.heure{ float:right; text-align: right; width: 48% }
+          }
+        }
+      }
+    }
+  }
+  div#webzine-footer{
+    height: 41px;
+    color:#FFF;
+    background: #fcbb59;
+    text-transform: uppercase;
+    text-align: center;
+    h2{ margin:0; padding-top:3px; }
+    a{ color:#FFF; margin-top: 3px;
+    }
+  }
+}

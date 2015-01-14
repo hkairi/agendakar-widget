@@ -1,23 +1,16 @@
 {
   "name": "webzine",
   "version": "1.0.0",
-  "description": "Widget proposé par www.agendakar.com pour partager ses top articles avec les sites partenaires",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "browserify -t reactify js/src/webzine.js -o js/build/webzine.js"
+    "start": "browserify -t reactify js/src/app.js -o js/build/webzine.js"
   },
-  "keywords": [
-    "agendakar",
-    "react",
-    "webzine",
-    "article"
-  ],
-  "author": "Hassane Moustapha (hassane.moustapha(at)",
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "browserify": "^8.0.3",
-    "jquery": "^2.1.3",
+  "devDependencies": {
+    "browserify": "^8.1.0",
     "react": "^0.12.2",
     "reactify": "^0.17.1"
   }

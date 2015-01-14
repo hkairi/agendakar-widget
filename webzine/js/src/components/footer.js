@@ -1,12 +1,12 @@
-var React = require('react');
-
-var Footer = React.createClass({
+var Footer= React.createClass({
   render: function(){
     return(
-      <div className='footer'>
-        <h1>Footer</h1>
+      <div id='webzine-footer'>
+        <a href="http://www.agendakar.com/webzine" target="_blank">
+          <h2 className='h'>{this.props.texte}</h2>
+        </a>
       </div>
-    )
+    );
   }
 });
 
