@@ -66,6 +66,8 @@ div#webzine-widget {
           padding: 1px; }
         div#webzine-widget div#webzine-special div#content div#image td.heure {
           text-align: right; }
+      div#webzine-widget div#webzine-special div#content td.heure {
+        text-align: right; }
       div#webzine-widget div#webzine-special div#content div#extra {
         width: 100%;
         text-align: center;

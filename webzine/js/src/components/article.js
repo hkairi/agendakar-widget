@@ -18,16 +18,18 @@ var Article = React.createClass({
         <div>
           <table className='article'>
             <tr>
-              <td>{_art.titre}</td>
+              <td colSpan='2'>{_art.titre}</td>
             </tr>
             <tr>
               <td>
                 <div className='dateheure'>
                   <small>
                   {'publi' + String.fromCharCode(233) + ' le '}
-                  <b>{_art.date_de_publication}</b>
                   </small>
                 </div>
+              </td>
+              <td style={{textAlign: 'right', fontSize: 'small'}}>
+                <b>{_art.date_de_publication}</b>
               </td>
             </tr>
            </table>

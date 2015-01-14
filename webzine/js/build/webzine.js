@@ -66,16 +66,18 @@ var Article = React.createClass({
         React.createElement("div", null, 
           React.createElement("table", {className: "article"}, 
             React.createElement("tr", null, 
-              React.createElement("td", null, _art.titre)
+              React.createElement("td", {colSpan: "2"}, _art.titre)
             ), 
             React.createElement("tr", null, 
               React.createElement("td", null, 
                 React.createElement("div", {className: "dateheure"}, 
                   React.createElement("small", null, 
-                  'publi' + String.fromCharCode(233) + ' le ', 
-                  React.createElement("b", null, _art.date_de_publication)
+                  'publi' + String.fromCharCode(233) + ' le '
                   )
                 )
+              ), 
+              React.createElement("td", {style: {textAlign: 'right', fontSize: 'small'}}, 
+                React.createElement("b", null, _art.date_de_publication)
               )
             )
            )
