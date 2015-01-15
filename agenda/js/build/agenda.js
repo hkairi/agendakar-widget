@@ -90,11 +90,12 @@ var AgendakarWidget= React.createClass({
     .fail(function(){ alert("Erreur"); });
   },
 
-  onEvenementClick: function(index){
+  onEvenementClick: function(e, index){
     this.setState({
       show    : true,
       item    : this.state.evenements[index]
     });
+    e.preventDefault();
   },
 
   onSpecialClose: function(){

@@ -11,9 +11,8 @@ var Evenement = React.createClass({
 
   getInitialState: function(){ return { iscollapsed: true }; },
 
-  clickHandler: function(e){
+  clickHandler: function(){
     this.props.onClick(this.props.index);
-    e.preventDefault();
   },
 
   render: function(){
