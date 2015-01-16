@@ -1,29 +1,31 @@
 div#agd-widget {
-  width: 300px !important;
+  width: 262px !important;
   border: 1px solid #A3ABAC;
-  height: 400px;
+  max-height: 400px;
   overflow: hidden;
   font-family: 'Dosis'; }
   div#agd-widget a {
     text-decoration: none; }
   div#agd-widget div#agd-header {
-    height: 65px !important;
+    height: 46px !important;
     background: #396eb5; }
     div#agd-widget div#agd-header div#agd-logo {
       width: 56px;
       float: left;
-      height: 65px; }
+      height: 46px;
+      margin: 2px; }
       div#agd-widget div#agd-header div#agd-logo a img {
-        width: 53px;
-        height: 53px;
+        width: 32px;
+        height: 32px;
         padding: 5px;
         border-radius: 1000px;
         background: #FFF; }
     div#agd-widget div#agd-header h1#agd-txt {
-      width: 237px;
+      width: 200px;
       float: right;
       color: #FFF;
-      font-size: 21px;
+      font-size: 15px;
+      margin: 15px 0 0 0;
       text-transform: uppercase; }
   div#agd-widget div#agd-special {
     height: 296px; }
@@ -32,31 +34,30 @@ div#agd-widget {
     div#agd-widget div#agd-special div#s-header {
       border-bottom: 1px solid #A3ABAC;
       height: 34px;
-      width: 290px;
+      width: 262px;
       margin: 0px auto; }
       div#agd-widget div#agd-special div#s-header div#date {
         float: left;
-        width: 260px; }
+        width: 230px; }
       div#agd-widget div#agd-special div#s-header div#close {
         width: 15px;
         float: right; }
         div#agd-widget div#agd-special div#s-header div#close i {
           color: #396eb5;
           float: right;
-          border: 2px solid #396eb5;
-          border-radius: 20px;
           z-index: 9999;
           padding: 3px;
-          margin: 8px;
+          margin: 0px 8px;
           cursor: pointer;
-          font-size: small; }
+          font-size: 24px; }
     div#agd-widget div#agd-special div#content {
-      width: 290px;
+      width: 262px;
       margin: 2px auto; }
       div#agd-widget div#agd-special div#content div.titre {
-        text-align: center; }
+        text-align: center;
+        font-size: 12px; }
       div#agd-widget div#agd-special div#content div#image {
-        width: 282px;
+        width: 254px;
         margin: 2px;
         font-size: small; }
         div#agd-widget div#agd-special div#content div#image img, div#agd-widget div#agd-special div#content div#image table {
@@ -75,12 +76,12 @@ div#agd-widget {
           background: #A3ABAC;
           padding: 3px 8px; }
   div#agd-widget div#agd-liste {
-    height: 294px;
-    width: 280px;
+    max-height: 294px;
+    width: 254px;
     margin: 2px auto;
     overflow: auto; }
     div#agd-widget div#agd-liste li {
-      font-size: 14px;
+      font-size: 13px;
       list-style: none;
       height: 39px;
       padding: 3px 0;
@@ -104,14 +105,17 @@ div#agd-widget {
           text-align: right;
           width: 48%; }
   div#agd-widget div#agd-footer {
-    height: 41px;
+    height: 33px;
     color: #FFF;
     background: #396eb5;
     text-transform: uppercase;
     text-align: center; }
     div#agd-widget div#agd-footer h2 {
+      font-size: 17px;
       margin: 0;
       padding-top: 3px; }
     div#agd-widget div#agd-footer a {
       color: #FFF;
       margin-top: 3px; }
+
+/*# sourceMappingURL=main.css.map */

@@ -22,7 +22,7 @@ function load_police(url){
 }
 
 function loadPolices(){
-  load_police("css/main.min.css");
+  load_police("css/main.css");
   load_police("http://fonts.googleapis.com/css?family=Dosis");
   load_police("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 }
@@ -323,7 +323,7 @@ var Special = React.createClass({displayName: "Special",
           React.createElement("div", {id: "extra"}, 
             React.createElement("a", {href: this.get_url(), target: "_blank"}, 
               React.createElement("i", {className: "fa fa-external-link"}), 
-              "plus d'infos sur www.agenakar.com"
+              "plus d'infos sur www.agendakar.com"
             )
           )
         )

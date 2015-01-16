@@ -1,23 +1,24 @@
 div#agd-widget{
-  width: 300px !important;
+  width: 262px !important;
   border: 1px solid #A3ABAC;
-  height:400px;
+  max-height:400px;
   overflow: hidden;
   font-family: 'Dosis';
 
   a{ text-decoration: none; }
 
   div#agd-header{
-    height: 65px !important;
+    height: 46px !important;
     background: #396eb5;
     div#agd-logo{
       width: 56px;
       float: left;
-      height: 65px;
+      height: 46px;
+      margin: 2px;
       a{
         img{
-          width: 53px;
-          height: 53px;
+          width: 32px;
+          height: 32px;
           padding: 5px;
           border-radius: 1000px;
           background:#FFF;
@@ -25,10 +26,11 @@ div#agd-widget{
       }
     }
     h1#agd-txt{
-      width: 237px;
+      width: 200px;
       float: right;
       color: #FFF;
-      font-size: 21px;
+      font-size: 15px;
+      margin:15px 0 0 0;
       text-transform: uppercase;
     }
   }
@@ -38,11 +40,11 @@ div#agd-widget{
     div#s-header{
       border-bottom: 1px solid #A3ABAC;
       height: 34px;
-      width: 290px;
+      width: 262px;
       margin: 0px auto;
       div#date{
         float: left;
-        width: 260px;
+        width: 230px;
       }
       div#close{
         width: 15px;
@@ -50,22 +52,20 @@ div#agd-widget{
         i{
           color: #396eb5;
           float: right;
-          border: 2px solid #396eb5;
-          border-radius: 20px;
           z-index: 9999;
           padding: 3px;
-          margin: 8px;
+          margin: 0px 8px;
           cursor: pointer;
-          font-size: small;
+          font-size: 24px;
         }
       }
     }
     div#content{
-      width: 290px;
+      width: 262px;
       margin: 2px auto;
-      div.titre{ text-align: center; }
+      div.titre{ text-align: center; font-size: 12px;}
       div#image{
-        width:282px;
+        width:254px;
         margin:2px;
         img, table{ width: 100%; }
         img{border:1px solid #EEE; padding: 1px}
@@ -85,12 +85,12 @@ div#agd-widget{
     }
   }
   div#agd-liste{
-    height: 294px;
-    width: 280px;
+    max-height: 294px;
+    width: 254px;
     margin: 2px auto;
     overflow: auto;
     li{
-      font-size: 14px;
+      font-size: 13px;
       list-style: none;
       height: 39px;
       padding:3px 0;
@@ -114,12 +114,13 @@ div#agd-widget{
     }
   }
   div#agd-footer{
-    height: 41px;
+    height: 33px;
     color:#FFF;
     background: #396eb5;
     text-transform: uppercase;
     text-align: center;
     h2{
+      font-size: 17px;
       margin:0;
       padding-top:3px;
     }

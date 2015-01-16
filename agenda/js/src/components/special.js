@@ -38,7 +38,7 @@ var Special = React.createClass({
           <div id='extra'>
             <a href={this.get_url()} target='_blank'>
               <i className='fa fa-external-link'></i>
-              plus d'infos sur www.agenakar.com
+              plus d'infos sur www.agendakar.com
             </a>
           </div>
         </div>

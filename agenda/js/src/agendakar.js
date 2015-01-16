@@ -21,7 +21,7 @@ function load_police(url){
 }
 
 function loadPolices(){
-  load_police("css/main.min.css");
+  load_police("css/main.css");
   load_police("http://fonts.googleapis.com/css?family=Dosis");
   load_police("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 }
