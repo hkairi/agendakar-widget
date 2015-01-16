@@ -19,6 +19,7 @@ var WebzineWidget = React.createClass({
       show : true,
       item : this.state.articles[index]
     });
+    return false;
   },
 
   fetchData: function(){
@@ -41,6 +42,7 @@ var WebzineWidget = React.createClass({
 
   onSpecialClose: function(){
     this.setState({ item : null, show: false });
+    return false;
   },
 
   render: function(){

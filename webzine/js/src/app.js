@@ -28,7 +28,7 @@ function loadPolices(){
 
 function start(){
   var WebzineWidget = require('./components/webzine');
-  var e   = document.getElementById('agendakar-widget');
+  var e   = document.getElementById('agendakar-webzine');
   var d   = e.attributes['data-el'].value;
   var _id = e.attributes['data-cid'].value;
 
@@ -36,10 +36,18 @@ function start(){
     <WebzineWidget clientId={_id}/>, document.getElementById(d)
   )
 }
-
 function load_react(){
-  loadScript("https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js", start);
+  if( window.React === undefined ){
+    loadScript("https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js", start);
+  }
 }
-
+function loadjQuery(){
+  if( window.jQuery === undefined ){
+    loadScript("https://code.jquery.com/jquery-1.11.2.min.js", load_react);
+  }
+  else {
+    load_react();
+  }
+}
 loadPolices();
-loadScript("https://code.jquery.com/jquery-1.11.2.min.js", load_react);
+loadjQuery();
