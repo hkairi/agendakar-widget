@@ -1,0 +1,77 @@
+div#agd-search-widget {
+  width: 300px !important;
+  overflow: hidden;
+  font-family: 'Dosis'; }
+  div#agd-search-widget div#agd-search {
+    width: 262px;
+    height: 31px;
+    border-bottom: 3px solid #FCBB59;
+    margin: 0px auto; }
+    div#agd-search-widget div#agd-search button {
+      height: 27px;
+      border: none;
+      color: #396eb5;
+      background: #FFF;
+      float: right;
+      padding: 5px;
+      margin: 0; }
+      div#agd-search-widget div#agd-search button i {
+        font-size: 15px;
+        float: right; }
+        div#agd-search-widget div#agd-search button i:active {
+          border: none; }
+      div#agd-search-widget div#agd-search button:active {
+        border: none; }
+    div#agd-search-widget div#agd-search input#agd-searchfield {
+      width: 230px;
+      height: 27px;
+      border: none;
+      font-family: 'Dosis';
+      font-size: 15px;
+      padding-left: 5px;
+      margin: 0; }
+      div#agd-search-widget div#agd-search input#agd-searchfield:focus {
+        color: #333;
+        outline: none;
+        border: none; }
+  div#agd-search-widget div#agd-resultats {
+    width: 260px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 300px;
+    margin: 0px auto;
+    border: 1px solid #EEE;
+    border-top: none; }
+    div#agd-search-widget div#agd-resultats div#loading {
+      width: 100%;
+      height: 30px;
+      padding: 5px 0 0 0;
+      text-align: center;
+      font-family: 'Dosis'; }
+    div#agd-search-widget div#agd-resultats div.results {
+      width: 252px;
+      margin: 0px auto;
+      overflow: auto;
+      padding: 0px 5px; }
+      div#agd-search-widget div#agd-resultats div.results header {
+        margin: 10px 0px 5px 0px;
+        font-family: 'Dosis';
+        font-weight: bold;
+        font-size: large; }
+        div#agd-search-widget div#agd-resultats div.results header.agenda {
+          color: #396eb5; }
+        div#agd-search-widget div#agd-resultats div.results header.webzine {
+          color: #fcbb59; }
+      div#agd-search-widget div#agd-resultats div.results ul {
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+        div#agd-search-widget div#agd-resultats div.results ul li {
+          height: 18px;
+          font-size: 13px;
+          overflow: hidden; }
+          div#agd-search-widget div#agd-resultats div.results ul li.empty {
+            color: red;
+            font-size: large;
+            text-align: center;
+            text-transform: uppercase; }
