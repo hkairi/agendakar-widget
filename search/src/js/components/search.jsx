@@ -31,7 +31,7 @@ var SearchWidget = React.createClass({
       isSearching : false,
       agenda      : agenda,
       webzine     : webzine,
-      hasResults  : (agenda.length !== 0 || webzine.length !== 0)
+      hasResults  : true
     });
   },
 
@@ -41,7 +41,7 @@ var SearchWidget = React.createClass({
       .then(this.showResults)
       .fail(function(){
         console.log("erreur...");
-      })
+      });
   },
 
   onSearchCancel: function(){

@@ -61,10 +61,10 @@ div#agd-search-widget {
         div#agd-search-widget div#agd-resultats div.results header.agenda {
           color: #396eb5; }
         div#agd-search-widget div#agd-resultats div.results header.webzine {
-          color: #fcbb59; }
+          color: #FCBB59; }
       div#agd-search-widget div#agd-resultats div.results ul {
         list-style: none;
-        margin: 0;
+        margin: 10px 0;
         padding: 0; }
         div#agd-search-widget div#agd-resultats div.results ul li {
           height: 18px;
@@ -74,4 +74,7 @@ div#agd-search-widget {
             color: red;
             font-size: large;
             text-align: center;
-            text-transform: uppercase; }
+            text-transform: uppercase;
+            height: 30px; }
+
+/*# sourceMappingURL=search.css.map */

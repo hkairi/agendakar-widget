@@ -71,7 +71,7 @@ div#agd-search-widget{
       }
       ul{
         list-style: none;
-        margin:0;
+        margin:10px 0;
         padding:0;
         li{
           height: 18px;
@@ -82,6 +82,7 @@ div#agd-search-widget{
             font-size: large;
             text-align: center;
             text-transform: uppercase;
+            height: 30px;
           }
         }
       }

@@ -53,7 +53,7 @@ var SearchWidget = React.createClass({displayName: "SearchWidget",
       isSearching : false,
       agenda      : agenda,
       webzine     : webzine,
-      hasResults  : (agenda.length !== 0 || webzine.length !== 0)
+      hasResults  : true
     });
   },
 
