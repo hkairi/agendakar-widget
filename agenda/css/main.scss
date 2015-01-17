@@ -70,7 +70,8 @@ div#agd-widget{
         img, table{ width: 100%; }
         img{border:1px solid #EEE; padding: 1px}
         font-size: small;
-        td.heure{ text-align: right }
+        td.date{ text-align: left; color: #2255A1 }
+        td.heure{ text-align: right; color: #2255A1 }
       }
       div#extra{
         width: 100%;

@@ -312,7 +312,7 @@ var Special = React.createClass({displayName: "Special",
             React.createElement("br", null), 
             React.createElement("table", null, 
               React.createElement("tr", null, 
-                React.createElement("td", null, _item.date), 
+                React.createElement("td", {className: "date"}, _item.date), 
                 React.createElement("td", {className: "heure"}, _item.heure)
               ), 
               React.createElement("tr", null, 

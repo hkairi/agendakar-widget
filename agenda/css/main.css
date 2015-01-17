@@ -65,8 +65,12 @@ div#agd-widget {
         div#agd-widget div#agd-special div#content div#image img {
           border: 1px solid #EEE;
           padding: 1px; }
+        div#agd-widget div#agd-special div#content div#image td.date {
+          text-align: left;
+          color: #2255A1; }
         div#agd-widget div#agd-special div#content div#image td.heure {
-          text-align: right; }
+          text-align: right;
+          color: #2255A1; }
       div#agd-widget div#agd-special div#content div#extra {
         width: 100%;
         text-align: center;

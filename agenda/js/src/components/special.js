@@ -27,7 +27,7 @@ var Special = React.createClass({
             <br />
             <table>
               <tr>
-                <td>{_item.date}</td>
+                <td className='date'>{_item.date}</td>
                 <td className='heure'>{_item.heure}</td>
               </tr>
               <tr>
