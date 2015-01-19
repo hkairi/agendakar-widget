@@ -1,38 +1,39 @@
 div#webzine-widget {
-  width: 300px !important;
+  width: 262px !important;
   border: 1px solid #A3ABAC;
-  height: 400px;
+  max-height: 400px;
   overflow: hidden;
   font-family: 'Dosis'; }
   div#webzine-widget a {
     text-decoration: none; }
   div#webzine-widget div#webzine-header {
-    height: 65px !important;
+    height: 43px !important;
     background: #fcbb59; }
     div#webzine-widget div#webzine-header div#webzine-logo {
-      width: 56px;
+      width: 44px;
       float: left;
-      height: 65px; }
+      height: 43px; }
       div#webzine-widget div#webzine-header div#webzine-logo a img {
-        width: 53px;
-        height: 53px;
+        width: 32px;
+        height: 32px;
         padding: 5px;
         border-radius: 1000px;
         background: #FFF; }
     div#webzine-widget div#webzine-header h1#webzine-txt {
-      width: 226px;
+      width: 210px;
       float: right;
       color: #FFF;
-      font-size: 25px;
+      font-size: 22px;
+      margin: 8px 0;
       text-transform: uppercase; }
   div#webzine-widget div#webzine-special {
-    height: 296px; }
+    height: 260px; }
     div#webzine-widget div#webzine-special.hidden {
       display: none; }
     div#webzine-widget div#webzine-special div#s-header {
       border-bottom: 1px solid #A3ABAC;
       height: 34px;
-      width: 290px;
+      width: 260px;
       margin: 0px auto; }
       div#webzine-widget div#webzine-special div#s-header div#date {
         float: left;
@@ -51,12 +52,13 @@ div#webzine-widget {
           font-size: small;
           border-radius: 20px; }
     div#webzine-widget div#webzine-special div#content {
-      width: 290px;
+      width: 260px;
       margin: 2px auto; }
       div#webzine-widget div#webzine-special div#content div.titre {
-        text-align: center; }
+        text-align: center;
+        font-size: small; }
       div#webzine-widget div#webzine-special div#content div#image {
-        width: 282px;
+        width: 250px;
         margin: 2px;
         font-size: small; }
         div#webzine-widget div#webzine-special div#content div#image img, div#webzine-widget div#webzine-special div#content div#image table {
@@ -66,12 +68,10 @@ div#webzine-widget {
           padding: 1px; }
         div#webzine-widget div#webzine-special div#content div#image td.heure {
           text-align: right; }
-      div#webzine-widget div#webzine-special div#content td.heure {
-        text-align: right; }
       div#webzine-widget div#webzine-special div#content div#extra {
         width: 100%;
         text-align: center;
-        margin: 5px 0 0 0; }
+        margin: 10px 0 0 0; }
         div#webzine-widget div#webzine-special div#content div#extra a {
           color: #FFF;
           background: #A3ABAC;
@@ -81,7 +81,7 @@ div#webzine-widget {
             font-size: small; }
   div#webzine-widget div#webzine-liste {
     height: 294px;
-    width: 280px;
+    width: 262px;
     margin: 2px auto;
     overflow: auto; }
     div#webzine-widget div#webzine-liste li {
@@ -113,10 +113,13 @@ div#webzine-widget {
     color: #FFF;
     background: #fcbb59;
     text-transform: uppercase;
-    text-align: center; }
+    text-align: center;
+    font-size: 15px; }
     div#webzine-widget div#webzine-footer h2 {
       margin: 0;
       padding-top: 3px; }
     div#webzine-widget div#webzine-footer a {
       color: #FFF;
       margin-top: 3px; }
+
+/*# sourceMappingURL=main.css.map */
