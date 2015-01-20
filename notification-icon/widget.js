@@ -7,7 +7,7 @@ React.render(
 );
 
 },{"./components/app.jsx":2,"react":150}],2:[function(require,module,exports){
-var Icone = require('./notification.jsx'),
+var Icone = require('./icone.jsx'),
     React = require('react');
 
 var App = React.createClass({displayName: "App",
@@ -40,7 +40,7 @@ var App = React.createClass({displayName: "App",
 
 module.exports = App;
 
-},{"./notification.jsx":3,"react":150}],3:[function(require,module,exports){
+},{"./icone.jsx":3,"react":150}],3:[function(require,module,exports){
 var React = require('react');
 
 var Icone = React.createClass({displayName: "Icone",
