@@ -1,5 +1,5 @@
-var Notification = require('./notification.jsx'),
-    React        = require('react');
+var Icone = require('./notification.jsx'),
+    React = require('react');
 
 var App = React.createClass({
 
@@ -20,10 +20,10 @@ var App = React.createClass({
   render: function(){
     return(
       <div>
-        <Notification etat = {true}  on = 'fa-bell'      off = 'fa-bell-slash'/>
-        <Notification etat = {false} on = 'fa-toggle-on' off = 'fa-toggle-off'/>
-        <Notification etat = {false} on = 'fa-thumbs-up' off = 'fa-thumbs-down'/>
-        <Notification etat = {true}  on = 'fa-check-square-o' off = 'fa-square-o'/>
+        <Icone etat = {true}  on = 'fa-bell'      off = 'fa-bell-slash'/>
+        <Icone etat = {false} on = 'fa-toggle-on' off = 'fa-toggle-off'/>
+        <Icone etat = {false} on = 'fa-thumbs-up' off = 'fa-thumbs-down'/>
+        <Icone etat = {true}  on = 'fa-check-square-o' off = 'fa-square-o'/>
       </div>
     );
   }

@@ -1,6 +1,12 @@
 var React = require('react');
 
-var Notification = React.createClass({
+var Icone = React.createClass({
+
+  propTypes: {
+    etat : React.PropTypes.bool.isRequired,
+    on   : React.PropTypes.string.isRequired,
+    off  : React.PropTypes.string.isRequired
+  },
 
   getInitialState: function(){
     return {
@@ -42,4 +48,4 @@ var Notification = React.createClass({
   }
 });
 
-module.exports = Notification;
+module.exports = Icone;

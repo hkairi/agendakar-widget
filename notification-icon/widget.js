@@ -7,8 +7,8 @@ React.render(
 );
 
 },{"./components/app.jsx":2,"react":150}],2:[function(require,module,exports){
-var Notification = require('./notification.jsx'),
-    React        = require('react');
+var Icone = require('./notification.jsx'),
+    React = require('react');
 
 var App = React.createClass({displayName: "App",
 
@@ -29,10 +29,10 @@ var App = React.createClass({displayName: "App",
   render: function(){
     return(
       React.createElement("div", null, 
-        React.createElement(Notification, {etat: true, on: "fa-bell", off: "fa-bell-slash"}), 
-        React.createElement(Notification, {etat: false, on: "fa-toggle-on", off: "fa-toggle-off"}), 
-        React.createElement(Notification, {etat: false, on: "fa-thumbs-up", off: "fa-thumbs-down"}), 
-        React.createElement(Notification, {etat: true, on: "fa-check-square-o", off: "fa-square-o"})
+        React.createElement(Icone, {etat: true, on: "fa-bell", off: "fa-bell-slash"}), 
+        React.createElement(Icone, {etat: false, on: "fa-toggle-on", off: "fa-toggle-off"}), 
+        React.createElement(Icone, {etat: false, on: "fa-thumbs-up", off: "fa-thumbs-down"}), 
+        React.createElement(Icone, {etat: true, on: "fa-check-square-o", off: "fa-square-o"})
       )
     );
   }
@@ -43,7 +43,13 @@ module.exports = App;
 },{"./notification.jsx":3,"react":150}],3:[function(require,module,exports){
 var React = require('react');
 
-var Notification = React.createClass({displayName: "Notification",
+var Icone = React.createClass({displayName: "Icone",
+
+  propTypes: {
+    etat : React.PropTypes.bool.isRequired,
+    on   : React.PropTypes.string.isRequired,
+    off  : React.PropTypes.string.isRequired
+  },
 
   getInitialState: function(){
     return {
@@ -85,7 +91,7 @@ var Notification = React.createClass({displayName: "Notification",
   }
 });
 
-module.exports = Notification;
+module.exports = Icone;
 
 },{"react":150}],4:[function(require,module,exports){
 // shim for using process in browser
