@@ -1,0 +1,23 @@
+div#notifications {
+  width: 200px;
+  height: 35px;
+  border: 1px solid #A3ABAC; }
+  div#notifications div.notification {
+    margin: 5px 10px;
+    float: left;
+    color: #A3ABAC; }
+    div#notifications div.notification.on {
+      color: green; }
+    div#notifications div.notification.off {
+      color: red; }
+    div#notifications div.notification i {
+      font-size: 24px; }
+    div#notifications div.notification span.txt {
+      font-size: 10px;
+      width: 5px;
+      height: 5px;
+      position: relative;
+      top: -8px;
+      right: 2px; }
+
+/*# sourceMappingURL=style.css.map */
