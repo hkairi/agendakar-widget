@@ -1,4 +1,4 @@
-var Icone = require('./notification.jsx'),
+var Icone = require('./icone.jsx'),
     React = require('react');
 
 var App = React.createClass({
