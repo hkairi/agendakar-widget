@@ -1,0 +1,12 @@
+{
+  "name": "osl-dakar",
+  "version": "1.0.0",
+  "description": "Old School Louning Dakar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "browserify -t reactify src/js/osl.js -o build/js/osl.js"
+  },
+  "author": "Hassane Moustapha",
+  "license": "ISC"
+}

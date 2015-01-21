@@ -1,0 +1,18 @@
+div#osl-player{
+  width: 300px;
+  max-height: 450px;
+  audio{
+    position: relative;
+    width: 300px;
+    height: 30px;
+  }
+  ul{
+    width: 300px;
+    padding: 0;
+    li{
+      list-style: none;
+      margin:5px;
+      border-bottom: 1px solid #E8E9E9;
+    }
+  }
+}
