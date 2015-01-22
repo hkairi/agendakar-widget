@@ -32,7 +32,9 @@ var Liste = React.createClass({
 
     return(
       <div id='agd-liste'>
-        {liste}
+        <ul>
+          {liste}
+        </ul>
       </div>
     );
   }

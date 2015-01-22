@@ -90,25 +90,28 @@ div#agd-widget{
     width: 254px;
     margin: 2px auto;
     overflow: auto;
-    li{
-      font-size: 13px;
-      list-style: none;
-      height: 39px;
-      padding:3px 0;
-      border-bottom: 1px solid #A3ABAC;
-      overflow: hidden;
-      a{ color: #000; }
-      &:hover{
-        cursor: pointer;
-        color:#396eb5;
-        a{ color: #396eb5; }
-      }
-      table{
-        width:100%;
-        tr{
-          td{
+    ul{
+      padding:0;
+      li{
+        font-size: 13px;
+        list-style: none;
+        height: 39px;
+        padding:3px 0;
+        border-bottom: 1px solid #A3ABAC;
+        overflow: hidden;
+        a{ color: #000; }
+        &:hover{
+          cursor: pointer;
+          color:#396eb5;
+          a{ color: #396eb5; }
+        }
+        table{
+          width:100%;
+          tr{
+            td{
               div.date { float:left;  text-align: left;  width: 48% }
               div.heure{ float:right; text-align: right; width: 48% }
+            }
           }
         }
       }

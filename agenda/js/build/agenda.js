@@ -274,7 +274,9 @@ var Liste = React.createClass({
 
     return(
       React.createElement("div", {id: "agd-liste"}, 
-        liste
+        React.createElement("ul", null, 
+          liste
+        )
       )
     );
   }
