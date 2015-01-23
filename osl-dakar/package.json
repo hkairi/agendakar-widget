@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "browserify -t reactify src/js/osl.js -o build/js/osl.js"
+    "start": "browserify -t reactify src/js/osl.js -o build/js/osl.js"
   },
   "author": "Hassane Moustapha",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-router": "^0.11.6"
+  }
 }
